@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../stdin"],"names":[],"mappings":"AACA;EACE,kBAAkB,EACnB","file":"app.css","sourcesContent":["// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\nbody {\n  padding-top: 70px;\n}\n"],"sourceRoot":"/source/"}

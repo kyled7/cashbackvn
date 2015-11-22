@@ -1,0 +1,13 @@
+body {
+  padding-top: 70px;
+}
+
+.form-group.has-error .help-block {
+  display: block;
+}
+
+.auth-box {
+  max-width: 500px;
+}
+
+/*# sourceMappingURL=app.css.map */

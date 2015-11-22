@@ -7,7 +7,7 @@
 
     @include('includes.navbar')
 
-    <div class="container" style="padding-top: 70px">
+    <div class="container">
         @yield('content')
     </div>
 
