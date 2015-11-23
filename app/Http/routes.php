@@ -16,6 +16,14 @@ Route::get('/', function () {
 });
 
 Route::controllers([
-    'auth' => 'Auth\AuthController',
+    'user' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
+
+Route::group(['namespace' => 'Admin'], function() {
+    Route::group(['prefix' => 'admin'], function() {
+        Route::get('/', 'DashboardController@getIndex');
+        Route::controller('dashboard', 'DashboardController');
+        Route::resource('retailers', 'RetailersController');
+    });
+});

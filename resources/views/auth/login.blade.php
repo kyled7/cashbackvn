@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group">
-                    <a href="/password/email" class="pull-right btn-lg">{{ trans('message.forgot-password') }}</a>
+                    <a href="{{ action('Auth\PasswordController@getEmail') }}" class="pull-right btn-lg">{{ trans('message.forgot-password') }}</a>
                 </div>
 
                 <div class="form-group">

@@ -19,15 +19,15 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/auth/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out</a>
+                            <a href="{{ action('Auth\AuthController@getLogout') }}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out</a>
                         </li>
                     </ul>
                 </li>
             @else
-                <li><button class="btn btn-link navbar-btn" onclick="location.href='/auth/login'">
+                <li><button class="btn btn-link navbar-btn" onclick="location.href='{{ action('Auth\AuthController@getLogin') }}'">
                         {{ trans('message.login') }}
                     </button> </li>
-                <li><button class="btn btn-info btn-raised navbar-btn" onclick="location.href='/auth/register'">
+                <li><button class="btn btn-info btn-raised navbar-btn" onclick="location.href='{{ action('Auth\AuthController@getRegister') }}'">
                         {{ trans('message.register') }}
                     </button> </li>
             @endif
