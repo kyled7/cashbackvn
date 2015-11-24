@@ -37,9 +37,8 @@
             <div class="form-group">
                 {!! Form::submit(trans('message.register'), ['class' => 'btn btn-primary btn-block']) !!}
             </div>
+            {!! Form::close() !!}
         </div>
     </div>
-    {!! Form::close() !!}
-
 
 @stop

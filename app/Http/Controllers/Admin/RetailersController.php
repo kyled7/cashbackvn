@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
 use App\Retailer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class RetailersController extends AdminController
 {
@@ -15,7 +17,7 @@ class RetailersController extends AdminController
      */
     public function index()
     {
-        $retailers = Retailer::all();
+        $retailers = Retailer::paginate(10);
 
         return view('admin/retailers/index')
             ->with('retailers', $retailers);
@@ -28,7 +30,7 @@ class RetailersController extends AdminController
      */
     public function create()
     {
-        //
+        return view('admin/retailers/create');
     }
 
     /**
@@ -39,7 +41,14 @@ class RetailersController extends AdminController
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        Retailer::create($request->all());
+
+        Session::flash('message', 'Successfully created retailer!');
+        return redirect()->to('admin/retailers');
     }
 
     /**
@@ -50,7 +59,9 @@ class RetailersController extends AdminController
      */
     public function show($id)
     {
-        //
+        $retailer = Retailer::findOrFail($id);
+
+        return view('admin/retailers/show')->withRetailer($retailer);
     }
 
     /**
@@ -61,7 +72,9 @@ class RetailersController extends AdminController
      */
     public function edit($id)
     {
-        //
+        $retailer = Retailer::findOrFail($id);
+
+        return view('admin/retailers/edit')->withRetailer($retailer);
     }
 
     /**
@@ -73,7 +86,16 @@ class RetailersController extends AdminController
      */
     public function update(Request $request, $id)
     {
-        //
+        $retailer = Retailer::findOrFail($id);
+
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        $retailer->fill($request->all())->save();
+
+        Session::flash('message', 'Successfully update retailer!');
+        return redirect()->to('admin/retailers');
     }
 
     /**
@@ -84,6 +106,10 @@ class RetailersController extends AdminController
      */
     public function destroy($id)
     {
-        //
+        $retailer = Retailer::findOrFail($id);
+        $retailer->delete();
+
+        Session::flash('message', 'Successfully delete retailer!');
+        return redirect()->to('admin/retailers');
     }
 }

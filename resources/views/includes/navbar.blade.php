@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-material-indigo navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">
@@ -32,8 +32,8 @@
                 <li><button class="btn btn-link navbar-btn" onclick="location.href='{{ action('Auth\AuthController@getLogin') }}'">
                         {{ trans('message.login') }}
                     </button> </li>
-                <li><button class="btn btn-info btn-raised navbar-btn" onclick="location.href='{{ action('Auth\AuthController@getRegister') }}'">
-                        {{ trans('message.register') }}
+                <li><button class="btn btn-material-deep-orange btn-raised navbar-btn" onclick="location.href='{{ action('Auth\AuthController@getRegister') }}'">
+                        <b>{{ trans('message.register') }}</b>
                     </button> </li>
             @endif
         </ul>
