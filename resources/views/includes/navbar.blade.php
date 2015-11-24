@@ -18,6 +18,11 @@
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
+                        @if(Auth::user()->is_admin)
+                            <li>
+                                <a href="{{ url('admin') }}">Admin</a>
+                            </li>
+                        @endif
                         <li>
                             <a href="{{ action('Auth\AuthController@getLogout') }}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out</a>
                         </li>

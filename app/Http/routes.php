@@ -21,7 +21,7 @@ Route::controllers([
 ]);
 
 Route::group(['namespace' => 'Admin'], function() {
-    Route::group(['prefix' => 'admin'], function() {
+    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
         Route::get('/', 'DashboardController@getIndex');
         Route::controller('dashboard', 'DashboardController');
         Route::resource('retailers', 'RetailersController');

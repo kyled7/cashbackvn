@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Http\Controllers\AdminController;
+use App\Retailer;
 
 class RetailersController extends AdminController
 {
@@ -14,7 +15,10 @@ class RetailersController extends AdminController
      */
     public function index()
     {
-        return 'aaa';
+        $retailers = Retailer::all();
+
+        return view('admin/retailers/index')
+            ->with('retailers', $retailers);
     }
 
     /**
