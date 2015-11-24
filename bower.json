@@ -1,0 +1,19 @@
+{
+  "name": "cashbackvn",
+  "private": true,
+  "authors": [
+    "Kyle Dinh"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.4.4",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.5.0"
+  }
+}
