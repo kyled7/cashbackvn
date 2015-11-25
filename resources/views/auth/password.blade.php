@@ -8,6 +8,7 @@
             <h3 class="panel-title">{{ trans('message.reset-password') }}</h3>
         </div>
         <div class="panel-body">
+            <p>{{ trans('message.reset-password-notice') }}</p>
             {!! Form::open(['class' => 'bs_component']) !!}
             <div class="form-group label-floating @if ($errors->has('email')) has-error @endif">
                 {!! Form::label('email', trans('message.email'), ['class' => 'control-label']) !!}
@@ -16,7 +17,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit(trans('message.reset-password'), ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit(trans('message.reset-password-submit'), ['class' => 'btn btn-primary btn-block']) !!}
             </div>
 
             {!! Form::close() !!}

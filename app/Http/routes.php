@@ -20,10 +20,13 @@ Route::controllers([
     'password' => 'Auth\PasswordController'
 ]);
 
-Route::group(['namespace' => 'Admin'], function() {
-    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
-        Route::get('/', 'DashboardController@getIndex');
-        Route::controller('dashboard', 'DashboardController');
-        Route::resource('retailers', 'RetailersController');
-    });
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('/', 'DashboardController@getIndex');
+    Route::controller('dashboard', 'DashboardController');
+    Route::resource('retailers', 'RetailersController');
+});
+
+Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => 'auth'], function() {
+    Route::get('/', 'SettingController@getIndex');
+    Route::controller('setting', 'SettingController');
 });

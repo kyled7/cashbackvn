@@ -15,16 +15,29 @@
                        role="button"
                        aria-haspopup="true"
                        aria-expanded="false">
+                        <span class="glyphicon glyphicon-user" area-hidden="true"></span>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ url('account') }}">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                {{ trans('message.account-setting') }}
+                            </a>
+                        </li>
                         @if(Auth::user()->is_admin)
                             <li>
-                                <a href="{{ url('admin') }}">Admin</a>
+                                <a href="{{ url('admin') }}">
+                                    <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Admin
+                                </a>
                             </li>
                         @endif
+                        <li role="separator" class="divider"></li>
                         <li>
-                            <a href="{{ action('Auth\AuthController@getLogout') }}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log out</a>
+                            <a href="{{ action('Auth\AuthController@getLogout') }}">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                                {{ trans('message.logout') }}
+                            </a>
                         </li>
                     </ul>
                 </li>
