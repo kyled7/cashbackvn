@@ -4,20 +4,23 @@
 <title>@yield('title')</title>
 
 <link href="{{ URL::asset('lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('lib/bootstrap-material-design/dist/css/roboto.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('lib/bootstrap-material-design/dist/css/material-fullpalette.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('lib/bootstrap-material-design/dist/css/ripples.min.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+<link href="{{ URL::asset('gsd/css/get-shit-done.css') }}" rel="stylesheet">
+
+<link href="{{ URL::asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+
+<link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
 
 <script src="{{ URL::asset('lib/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<script src="{{ URL::asset('lib/bootstrap-material-design/dist/js/ripples.min.js') }}"></script>
-<script src="{{ URL::asset('lib/bootstrap-material-design/dist/js/material.min.js') }}"></script>
+
+<script src="{{ URL::asset('gsd/js/gsdk-checkbox.js') }}"></script>
+<script src="{{ URL::asset('gsd/js/gsdk-radio.js') }}"></script>
+<script src="{{ URL::asset('gsd/js/gsdk-bootstrapswitch.js') }}"></script>
+<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
 
 <script>
-    $(function() {
-        $.material.init();
-    });
+
 
 </script>
 

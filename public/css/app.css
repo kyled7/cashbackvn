@@ -1,13 +1,5 @@
-body {
-  padding-top: 70px;
+#navbar-full .navbar {
+  border-radius: 0 !important;
+  margin-bottom: 0;
+  z-index: 2;
 }
-
-.form-group.has-error .help-block {
-  display: block;
-}
-
-.auth-box {
-  max-width: 500px;
-}
-
-/*# sourceMappingURL=app.css.map */

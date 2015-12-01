@@ -3,7 +3,7 @@
 @section('title', trans('message.login'))
 
 @section('content')
-    <div class="panel panel-primary auth-box center-block">
+    <div class="panel panel-primary center-block">
         <div class="panel-heading">
             <h3 class="panel-title">{{ trans('message.login') }}</h3>
         </div>

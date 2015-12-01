@@ -105,6 +105,7 @@ return [
     */
 
     'attributes' => [
+        'name' => 'tên',
         'password'  => 'mật khẩu'
     ],
 

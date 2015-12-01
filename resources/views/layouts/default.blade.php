@@ -7,8 +7,10 @@
 
     @include('includes.navbar')
 
-    <div class="container">
-        @yield('content')
+    <div class="main" style="height:700px">
+        <div class="container">
+            @yield('content')
+        </div>
     </div>
 
     @include('includes.footer')
