@@ -1,48 +1,29 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{ url('admin') }}">Admin</a>
-    </div>
-    <!-- /.navbar-header -->
+<!-- Left side column. contains the sidebar -->
+<aside class="main-sidebar">
 
-    <ul class="nav navbar-top-links navbar-right">
-        <li>
-            <a href="{{ url('/') }}">Homepage</a>
-        </li>
-        <!-- /.dropdown -->
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i> {{ Auth::user()->name }} <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li><a href="{{ action('Auth\AuthController@getLogout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </li>
-            </ul>
-            <!-- /.dropdown-user -->
-        </li>
-        <!-- /.dropdown -->
-    </ul>
-    <!-- /.navbar-top-links -->
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
 
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <a href="{{ url('/admin/dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="{{ url('/admin/retailers') }}"><i class="fa fa-fw"></i> Retailers</a>
-                </li>
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
 
-            </ul>
-        </div>
-        <!-- /.sidebar-collapse -->
-    </div>
-    <!-- /.navbar-static-side -->
-</nav>
+            <!-- Optionally, you can add icons to the links -->
+            <li @if(Request::path() == 'admin') class="active" @endif>
+                <a href="{{ url('admin') }}">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li @if(Request::is('admin/retailers*')) class="active" @endif>
+                <a href="{{ url('admin/retailers') }}">
+                    <i class="fa fa-shopping-cart"></i> <span>Retailers</span>
+                </a>
+            </li>
+            <li @if(Request::is('admin/deals*')) class="active" @endif>
+                <a href="{{ url('admin/deals') }}">
+                    <i class="fa fa-tags"></i> <span>Deals</span>
+                </a>
+            </li>
+        </ul><!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>

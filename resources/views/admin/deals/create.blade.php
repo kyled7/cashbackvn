@@ -1,15 +1,13 @@
 @extends('layouts.admin')
 
-
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-
                 <div class="box-body">
-                    {!! Form::open(['url' => 'admin/retailers']) !!}
+                    {!! Form::open(['url' => 'admin/deals']) !!}
 
-                    @include('admin/retailers/_form')
+                    @include('admin/deals/_form')
 
                     {!! Form::close() !!}
                 </div>

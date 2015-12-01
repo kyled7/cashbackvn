@@ -17,4 +17,9 @@ class Retailer extends Model
         'clicks',
         'status'
     ];
+
+    public function deals()
+    {
+        return $this->hasMany('App\Deal');
+    }
 }

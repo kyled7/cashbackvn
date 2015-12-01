@@ -8,59 +8,53 @@
             @endif
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Retailers management</h3>
+                    <h3 class="box-title">Deals management</h3>
                     <div class="box-tools">
-                        <a href="{{ url('admin/retailers/create') }}"  class="btn btn-primary pull-right">Create</a><br>
+                        <a href="{{ url('admin/deals/create') }}"  class="btn btn-primary pull-right">Create</a><br>
                     </div>
                 </div>
 
                 <div class="box-body">
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th width="20%">Logo</th>
-                                <th width="10%">Link</th>
+                                <th width="20%">Retailer</th>
                                 <th width="5%">Cashback value</th>
                                 <th width="5%">Type</th>
-                                <th width="5%">Clicks</th>
-                                <th width="5%">Status</th>
+                                <th width="5%">Valid from</th>
+                                <th width="5%">Expired</th>
                                 <th width="10%" align="center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($retailers as $retailer)
+                        @foreach($deals as $deal)
                             <tr>
-                                <td><a href="{{ route('admin.retailers.show', $retailer->id) }}">{{ $retailer->name }}</a></td>
-                                <td><img src="{{ $retailer->logo }}" class="img-thumbnail" > </td>
-                                <td>{{ $retailer->link }}</td>
-                                <td>{{ $retailer->cashback_value }}</td>
-                                <td>{{ $retailer->cashback_type }}</td>
-                                <td>{{ $retailer->clicks }}</td>
-                                <td>
-                                    <span class="label @if($retailer->status=='active') label-success @elseif($retailer->status=='inactive') label-default @endif">
-                                        {{ $retailer->status }}
-                                    </span>
-                                </td>
+                                <td><a href="{{ route('admin.deals.show', $deal->id) }}">{{ $deal->name }}</a></td>
+                                <td>{{ $deal->retailer->name }}</td>
+                                <td>{{ $deal->cashback_value }} ({{$deal->cashback_type}})</td>
+                                <td>{{ $deal->type }}</td>
+                                <td>{{ $deal->valid_from }}</td>
+                                <td>{{ $deal->expired_at }}</td>
                                 <td align="center">
-                                    <a href="{{ route('admin.retailers.edit', $retailer->id) }}" class="btn btn-primary btn-sm">
+                                    <a href="{{ route('admin.deals.edit', $deal->id) }}" class="btn btn-primary btn-sm">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                     </a>
                                     {!! Form::open([
                                         'method' => 'DELETE',
-                                        'route' => ['admin.retailers.destroy', $retailer->id],
+                                        'route' => ['admin.deals.destroy', $deal->id],
                                         'onsubmit' => "return confirm('Do you really want to delete?');",
                                         'class' => 'inline'
                                     ]) !!}
                                     {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>',
-                                        ['class' => 'btn btn-danger btn-sm', 'type'=>'submit']) !!}
+                                    ['class' => 'btn btn-danger btn-sm', 'type'=>'submit']) !!}
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    {!! $retailers->render() !!}
+                    {!! $deals->render() !!}
                 </div>
             </div>
         </div>

@@ -1,17 +1,17 @@
 @extends('layouts.admin')
 
+@section('title', 'Admin panel - Edit retailer')
 
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-
                 <div class="box-body">
-                    {!! Form::open(['url' => 'admin/retailers']) !!}
+                {!! Form::model($deal, ['method' => 'PATCH', 'route' => ['admin.deals.update', $deal->id]]) !!}
 
-                    @include('admin/retailers/_form')
+                @include('admin/deals/_form')
 
-                    {!! Form::close() !!}
+                {!! Form::close() !!}
                 </div>
             </div>
         </div>

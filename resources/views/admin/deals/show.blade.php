@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin panel - Edit retailer')
+@section('title', 'Admin panel - Deal')
 
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">{{ $retailer->name }}</h3>
+                    <h3 class="box-title">{{ $deal->name }}</h3>
                 </div>
 
                 <div class="box-body">
@@ -16,25 +16,43 @@
                             Description
                         </div>
                         <div class="col-sm-10">
-                            <p class="lead">{{ $retailer->description }}</p>
+                            <p class="lead">{{ $deal->description }}</p>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-2">
-                            Logo
+                            Retailer
                         </div>
                         <div class="col-sm-10">
-                            {{ $retailer->logo }}
+                            {{ $deal->retailer->name }}
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-2">
-                            Referral link
+                            Type
                         </div>
                         <div class="col-sm-10">
-                            {{ $retailer->link }}
+                            {{ $deal->type }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            Valid from
+                        </div>
+                        <div class="col-sm-10">
+                            {{ $deal->valid_from }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            Expired
+                        </div>
+                        <div class="col-sm-10">
+                            {{ $deal->expired_at }}
                         </div>
                     </div>
 
@@ -43,16 +61,7 @@
                             Cashback
                         </div>
                         <div class="col-sm-10">
-                            {{ $retailer->cashback_value }} ({{ $retailer->cashback_type }})
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-2">
-                            Status
-                        </div>
-                        <div class="col-sm-10">
-                            {{ $retailer->status }}
+                            {{ $deal->cashback_value }} ({{ $deal->cashback_type }})
                         </div>
                     </div>
 
@@ -61,7 +70,7 @@
                             Created at
                         </div>
                         <div class="col-sm-10">
-                            {{ $retailer->created_at }}
+                            {{ $deal->created_at }}
                         </div>
                     </div>
 
@@ -70,17 +79,17 @@
                             Updated at
                         </div>
                         <div class="col-sm-10">
-                            {{ $retailer->updated_at }}
+                            {{ $deal->updated_at }}
                         </div>
                     </div>
 
                     <div class="row">
-                        <a href="{{ route('admin.retailers.edit', $retailer->id) }}" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+                        <a href="{{ route('admin.deals.edit', $deal->id) }}" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
                         {!! Form::open([
                             'method' => 'DELETE',
-                            'route' => ['admin.retailers.destroy', $retailer->id],
+                            'route' => ['admin.deals.destroy', $deal->id],
                             'onsubmit' => "return confirm('Do you really want to delete?');",
-                            'class' => 'inline-block'
+                            'class' => 'inline'
                         ]) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-use App\Http\Controllers\AdminController;
-use App\Retailer;
 use Illuminate\Http\Request;
+use App\Deal;
+use App\Retailer;
+use App\Http\Requests;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Session;
 
-class RetailersController extends AdminController
+class DealsController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +18,10 @@ class RetailersController extends AdminController
      */
     public function index()
     {
-        $retailers = Retailer::paginate(20);
+        $page_title = "Admin - Deals";
+        $deals = Deal::paginate(20);
 
-        return view('admin/retailers/index', compact('page_title', 'retailers'));
+        return view('admin/deals/index', compact('page_title', 'deals'));
     }
 
     /**
@@ -29,8 +31,10 @@ class RetailersController extends AdminController
      */
     public function create()
     {
-        $page_title = "Admin - Create new retailer";
-        return view('admin/retailers/create', compact('page_title'));
+        $page_title = "Admin - Create new deal";
+        $retailers = Retailer::lists('name', 'id');
+
+        return view('admin/deals/create', compact('page_title', 'retailers'));
     }
 
     /**
@@ -45,10 +49,10 @@ class RetailersController extends AdminController
             'name' => 'required'
         ]);
 
-        Retailer::create($request->all());
+        Deal::create($request->all());
 
-        Session::flash('message', 'Successfully created retailer!');
-        return redirect()->to('admin/retailers');
+        Session::flash('message', 'Successfully created deal!');
+        return redirect()->to('admin/deals');
     }
 
     /**
@@ -59,10 +63,9 @@ class RetailersController extends AdminController
      */
     public function show($id)
     {
-        $retailer = Retailer::findOrFail($id);
-        $page_title = "Admin - Retailer ". $retailer->name;
+        $deal = Deal::findOrFail($id);
 
-        return view('admin/retailers/show', compact('page_title', 'retailer'));
+        return view('admin/deals/show')->withDeal($deal);
     }
 
     /**
@@ -73,10 +76,11 @@ class RetailersController extends AdminController
      */
     public function edit($id)
     {
-        $retailer = Retailer::findOrFail($id);
-        $page_title = "Admin - Edit retailer ". $retailer->name;
+        $deal = Deal::findOrFail($id);
+        $retailers = Retailer::lists('name', 'id');
+        $page_title = 'Admin - edit deal '. $deal->name;
 
-        return view('admin/retailers/edit', compact('page_title', 'retailer'));
+        return view('admin/deals/edit', compact('deal', 'retailers', 'page_title'));
     }
 
     /**
@@ -88,16 +92,16 @@ class RetailersController extends AdminController
      */
     public function update(Request $request, $id)
     {
-        $retailer = Retailer::findOrFail($id);
+        $deal = Deal::findOrFail($id);
 
         $this->validate($request, [
             'name' => 'required'
         ]);
 
-        $retailer->fill($request->all())->save();
+        $deal->fill($request->all())->save();
 
-        Session::flash('message', 'Successfully update retailer!');
-        return redirect()->to('admin/retailers');
+        Session::flash('message', 'Successfully update deal!');
+        return redirect()->to('admin/deals');
     }
 
     /**
@@ -108,10 +112,10 @@ class RetailersController extends AdminController
      */
     public function destroy($id)
     {
-        $retailer = Retailer::findOrFail($id);
-        $retailer->delete();
+        $deal = Deal::findOrFail($id);
+        $deal->delete();
 
-        Session::flash('message', 'Successfully delete retailer!');
-        return redirect()->to('admin/retailers');
+        Session::flash('message', 'Successfully delete deal!');
+        return redirect()->to('admin/deals');
     }
 }
