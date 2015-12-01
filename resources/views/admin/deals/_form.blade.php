@@ -1,3 +1,5 @@
+<link href="{{ asset("/lib/AdminLTE/plugins/datepicker/datepicker3.css")}}" rel="stylesheet" type="text/css" />
+
 <div class="form-group @if ($errors->has('name')) has-error @endif">
     {!! Form::label('name', 'Name', ['class' => 'control-label']) !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -42,3 +44,11 @@
 <div class="form-group">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
 </div>
+
+<script src="{{ asset ("/lib/AdminLTE/plugins/datepicker/bootstrap-datepicker.js") }}"></script>
+<script>
+    $(function() {
+        $("#valid_from").datepicker({format: 'yyyy-mm-dd'});
+        $("#expired_at").datepicker({format: 'yyyy-mm-dd'});
+    });
+</script>
