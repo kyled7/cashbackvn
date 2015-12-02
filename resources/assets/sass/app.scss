@@ -3,15 +3,18 @@
 //  padding-top: 70px;
 //}
 
-#navbar-full .navbar{
-  border-radius: 0 !important;
-  margin-bottom: 0;
-  z-index: 2;
+.blurred-container {
+  height: 200px;
+
+  .img-src {
+    height: 200px;
+  }
 }
 
-.blurred-container {
-//  height: 200px;
+.main {
+  padding-top: 70px;
 }
-.blurred-container .img-src {
-//  height: 200px;
+
+.auth-box {
+  max-width: 500px;
 }

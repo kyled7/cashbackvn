@@ -7,7 +7,7 @@
 
     @include('includes.navbar')
 
-    <div class="main" style="height:700px">
+    <div class="main">
         <div class="container">
             @yield('content')
         </div>

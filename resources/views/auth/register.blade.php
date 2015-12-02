@@ -3,7 +3,7 @@
 @section('title', trans('message.register'))
 
 @section('content')
-    <div class="panel panel-primary auth-box center-block">
+    <div class="panel panel-primary auth-box center-block" style="height:500px">
         <div class="panel-heading">
             <h3 class="panel-title">{{ trans('message.register') }}</h3>
         </div>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit(trans('message.register'), ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit(trans('message.register'), ['class' => 'btn btn-primary btn-fill btn-block']) !!}
             </div>
             {!! Form::close() !!}
         </div>

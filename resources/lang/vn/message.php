@@ -18,7 +18,7 @@ return [
     'register'      => 'Đăng ký',
     'email'         => 'Email:',
     'password'      => 'Mật khẩu:',
-    'remember'      => 'Duy trì đăng nhập',
+    'remember'      => 'Ghi nhớ đăng nhập',
     'forgot-password'   => 'Quên mật khẩu?',
     'name'          => 'Họ tên',
     'password-confirmation' => 'Xác nhận mật khẩu',
@@ -33,4 +33,12 @@ return [
     */
     'account'       => 'Tài khoản',
     'account-setting' => 'Thiết lập',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Homepage
+    |--------------------------------------------------------------------------
+    */
+    'search_placeholder' => 'Tìm website bán hàng...',
+    'search_button' => 'Tìm'
 ];

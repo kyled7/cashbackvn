@@ -3,12 +3,12 @@
 @section('title', trans('message.login'))
 
 @section('content')
-    <div class="panel panel-primary center-block">
+    <div class="panel panel-primary auth-box center-block">
         <div class="panel-heading">
             <h3 class="panel-title">{{ trans('message.login') }}</h3>
         </div>
         <div class="panel-body">
-            {!! Form::open(['class' => 'bs_component']) !!}
+            {!! Form::open() !!}
                 <div class="form-group label-floating @if ($errors->has('email')) has-error @endif">
                     {!! Form::label('email', trans('message.email'), ['class' => 'control-label']) !!}
                     {!! Form::text('email', null, ['class' => 'form-control']) !!}
@@ -22,20 +22,18 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="checkbox">
-                        <label>
-                            {!! Form::checkbox('remember') !!}
-                            {{ trans('message.remember') }}
-                        </label>
-                    </div>
+                    <label class="checkbox" for="remember">
+                        {!! Form::checkbox('remember', 1, null, ['id' => 'remember', 'data-toggle' => 'checkbox']) !!}
+                        {{ trans('message.remember') }}
+                    </label>
                 </div>
 
                 <div class="form-group">
-                    <a href="{{ action('Auth\PasswordController@getEmail') }}" class="pull-right btn-lg">{{ trans('message.forgot-password') }}</a>
+                    <a href="{{ action('Auth\PasswordController@getEmail') }}" class="pull-right btn btn-link">{{ trans('message.forgot-password') }}</a>
                 </div>
 
                 <div class="form-group">
-                    {!! Form::submit(trans('message.login'), ['class' => 'btn btn-primary btn-block']) !!}
+                    {!! Form::submit(trans('message.login'), ['class' => 'btn btn-primary btn-fill btn-block']) !!}
                 </div>
 
             {!! Form::close() !!}
