@@ -1,5 +1,4 @@
-@section('account-navbar')
-<ul class="nav nav-pills nav-justified">
+<ul class="nav nav-tabs nav-justified">
     <li role="presentation" class="active">
         <a href="{{ action('Account\SettingController@getIndex') }}">{{ trans('message.account-setting-tab') }}</a>
     </li>
@@ -10,4 +9,3 @@
         <a href="#">{{ trans('message.account-payment-tab') }}</a>
     </li>
 </ul>
-@stop
