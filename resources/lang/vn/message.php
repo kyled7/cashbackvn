@@ -33,6 +33,13 @@ return [
     */
     'account'       => 'Tài khoản',
     'account-setting' => 'Thiết lập',
+    'account-setting-tab' => 'Cá nhân',
+    'account-earning-tab' => 'Tài khoản',
+    'account-payment-tab' => 'Rút tiền',
+    'account-update' => 'Cập nhật',
+    'origin-password' => 'Mật khẩu hiện tại',
+    'new-password' => 'Mật khẩu mới',
+    'account-changepassword-btn' => 'Đổi mật khẩu',
 
     /*
     |--------------------------------------------------------------------------

@@ -22,14 +22,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="checkbox" for="remember">
-                        {!! Form::checkbox('remember', 1, null, ['id' => 'remember', 'data-toggle' => 'checkbox']) !!}
-                        {{ trans('message.remember') }}
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <a href="{{ action('Auth\PasswordController@getEmail') }}" class="pull-right btn btn-link">{{ trans('message.forgot-password') }}</a>
+                    <div class="col-xs-6">
+                        <label class="checkbox" for="remember">
+                            {!! Form::checkbox('remember', 1, null, ['id' => 'remember', 'data-toggle' => 'checkbox']) !!}
+                            {{ trans('message.remember') }}
+                        </label>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <a href="{{ action('Auth\PasswordController@getEmail') }}" class="btn btn-link">{{ trans('message.forgot-password') }}</a>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -37,6 +38,17 @@
                 </div>
 
             {!! Form::close() !!}
+
+            <hr>
+            <h4 class="title text-center">{{ trans('message.or-login-with') }}</h4>
+
+            <a href="{{ action('Auth\AuthController@getFacebook') }}">
+                <i class="fa fa-facebook-official fa-4x"></i>
+            </a>
+            <a href="{{ action('Auth\AuthController@getTwitter') }}">
+                <i class="fa fa-twitter-square fa-4x"></i>
+            </a>
+
         </div>
     </div>
 @stop

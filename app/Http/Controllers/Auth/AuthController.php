@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -29,7 +31,6 @@ class AuthController extends Controller
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -64,5 +65,44 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function getFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function getFacebookHandler()
+    {
+        $this->socialiteHandler('facebook');
+    }
+
+    public function getTwitter()
+    {
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    public function getTwitterHandler()
+    {
+        $this->socialiteHandler('twitter');
+    }
+
+    private function socialiteHandler($provider)
+    {
+        $socialUser = Socialite::driver($provider)->user();
+
+        $userCheck = User::where('provider', $provider)->where('social_id', $socialUser->getId())->first();
+
+        if ($userCheck) {
+            Auth::login($userCheck, true);
+        }
+        else {
+            $user = User::create([
+                'name' => $socialUser->getName(),
+                'provider' => $provider,
+                'social_id' => $socialUser->getId()
+            ]);
+            Auth::login($user, true);
+        }
     }
 }
