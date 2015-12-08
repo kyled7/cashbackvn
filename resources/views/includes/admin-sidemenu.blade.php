@@ -23,6 +23,11 @@
                     <i class="fa fa-tags"></i> <span>Deals</span>
                 </a>
             </li>
+            <li @if(Request::is('admin/categories*')) class="active" @endif>
+                <a href="{{ url('admin/categories') }}">
+                    <i class="fa fa-list"></i> <span>Categories</span>
+                </a>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

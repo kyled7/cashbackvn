@@ -12,6 +12,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="{{ asset("/lib/AdminLTE/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="{{ asset("/lib/font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css" />
+
+    <link href="{{ asset("/lib/AdminLTE/plugins/select2/select2.min.css")}}" rel="stylesheet" type="text/css"/>
     <!-- Theme style -->
     <link href="{{ asset("/lib/AdminLTE/dist/css/AdminLTE.min.css")}}" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter

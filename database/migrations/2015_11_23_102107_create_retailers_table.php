@@ -15,6 +15,7 @@ class CreateRetailersTable extends Migration
         Schema::create('retailers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->string('logo');
             $table->string('link');

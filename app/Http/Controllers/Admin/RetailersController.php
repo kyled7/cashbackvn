@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Category;
 use App\Http\Controllers\AdminController;
 use App\Retailer;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class RetailersController extends AdminController
     public function create()
     {
         $page_title = "Admin - Create new retailer";
-        return view('admin/retailers/create', compact('page_title'));
+        $categories = Category::lists('name', 'id');
+        return view('admin/retailers/create', compact('page_title', 'categories'));
     }
 
     /**
@@ -45,7 +47,9 @@ class RetailersController extends AdminController
             'name' => 'required'
         ]);
 
-        Retailer::create($request->all());
+        $retailer = Retailer::create($request->all());
+
+        $retailer->categories()->attach($request->input('category_list'));
 
         Session::flash('message', 'Successfully created retailer!');
         return redirect()->to('admin/retailers');
@@ -75,8 +79,9 @@ class RetailersController extends AdminController
     {
         $retailer = Retailer::findOrFail($id);
         $page_title = "Admin - Edit retailer ". $retailer->name;
+        $categories = Category::lists('name', 'id');
 
-        return view('admin/retailers/edit', compact('page_title', 'retailer'));
+        return view('admin/retailers/edit', compact('page_title', 'retailer', 'categories'));
     }
 
     /**
@@ -95,6 +100,8 @@ class RetailersController extends AdminController
         ]);
 
         $retailer->fill($request->all())->save();
+
+        $retailer->categories()->sync($request->input('category_list'));
 
         Session::flash('message', 'Successfully update retailer!');
         return redirect()->to('admin/retailers');

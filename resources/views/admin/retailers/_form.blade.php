@@ -10,6 +10,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('category_list', 'Categories', ['class' => 'control-label']) !!}
+    {!! Form::select('category_list[]', $categories, null, ['class' => 'form-control categories', 'multiple']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('logo', 'Logo URL', ['class' => 'control-label']) !!}
     {!! Form::text('logo', null, ['class' => 'form-control']) !!}
 </div>
@@ -37,3 +42,10 @@
 <div class="form-group">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
 </div>
+
+<script src="{{ asset ("/lib/AdminLTE/plugins/select2/select2.full.min.js") }}"></script>
+<script>
+    $(function () {
+        $(".categories").select2();
+    });
+</script>
