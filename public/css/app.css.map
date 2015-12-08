@@ -1,1 +1,13 @@
-{"version":3,"sources":["../../../stdin"],"names":[],"mappings":"AACA;EACE,kBAAkB,EACnB","file":"app.css","sourcesContent":["// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\nbody {\n  padding-top: 70px;\n}\n"],"sourceRoot":"/source/"}
+{
+  "version": 3,
+  "sources": [
+    "../../../stdin"
+  ],
+  "names": [],
+  "mappings": "AAKA;EACE,cAAc,EAKf;EAND;IAII,cAAc,EACf;;AAGH;EACE,cAAc;EACd,+BAA+B;EAC/B,mBAAmB,EACpB;;AAED;EACE,kBAAkB,EACnB;;AAED;EACE,iBAAiB,EAClB",
+  "file": "app.css",
+  "sourcesContent": [
+    "// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\n//body {\n//  padding-top: 70px;\n//}\n\n.blurred-container {\n  height: 200px;\n\n  .img-src {\n    height: 200px;\n  }\n}\n\n.intro-container {\n  height: 400px;\n  background-color: lightskyblue;\n  position: relative;\n}\n\n.main {\n  padding-top: 70px;\n}\n\n.auth-box {\n  max-width: 500px;\n}\n"
+  ],
+  "sourceRoot": "/source/"
+}
