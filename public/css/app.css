@@ -6,6 +6,12 @@
   height: 200px;
 }
 
+.intro-container {
+  height: 400px;
+  background-color: lightskyblue;
+  position: relative;
+}
+
 .main {
   padding-top: 70px;
 }
@@ -13,3 +19,5 @@
 .auth-box {
   max-width: 500px;
 }
+
+/*# sourceMappingURL=app.css.map */

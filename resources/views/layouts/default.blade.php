@@ -7,11 +7,7 @@
 
     @include('includes.navbar')
 
-    <div class="main">
-        <div class="container">
-            @yield('content')
-        </div>
-    </div>
+    @yield('content')
 
     @include('includes.footer')
 </body>
