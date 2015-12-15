@@ -18,6 +18,11 @@ class Deal extends Model
         'expired_at'
     ];
 
+    /**
+     * A deal belong to a retailer
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function retailer()
     {
         return $this->belongsTo('App\Retailer');

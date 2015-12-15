@@ -36,4 +36,38 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * An user has one account balance
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function account_balance()
+    {
+        return $this->hasOne('App\AccountBalance');
+    }
+
+    /**
+     * An user has many transactions
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactions()
+    {
+        return $this->hasMany('App\Transactions');
+    }
+
+    /**
+     * Get total available account balance amount
+     * @return mixed
+     */
+    public function total_amount()
+    {
+        return $this->account_balance->amount;
+    }
+
+    public function pending_amount()
+    {
+        return $this->transactions->where('status', 'pending')->sum('amount');
+    }
 }
