@@ -12,13 +12,20 @@
 }
 
 .intro-container {
-  height: 400px;
+  padding: 20px 0px;
   background-color: lightskyblue;
   position: relative;
 }
 
 .main {
   padding-top: 70px;
+  .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex: 1 0 auto;
+  }
 }
 
 .auth-box {

@@ -9,6 +9,8 @@
 <link href="{{ URL::asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 
+<link href="{{ URL::asset('lib/wow/css/libs/animate.css') }}" rel="stylesheet">
+
 <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
 
 <script src="{{ URL::asset('lib/jquery/dist/jquery.min.js') }}"></script>
@@ -19,8 +21,9 @@
 <script src="{{ URL::asset('gsd/js/gsdk-bootstrapswitch.js') }}"></script>
 <script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
 
+<script src="{{ URL::asset('lib/wow/dist/wow.min.js') }}"></script>
+
 <script>
-
-
+    new WOW().init();
 </script>
 
