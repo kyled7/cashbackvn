@@ -14,22 +14,25 @@ class CreateAccountBalanceTable extends Migration
     {
         Schema::create('account_balance', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->double('amount');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->double('amount')->default(0);
             $table->timestamps();
         });
 
         Schema::create('account_balance_history', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('account_balance_id');
+            $table->integer('account_balance_id')->unsigned()->index();
+            $table->foreign('account_balance_id')->references('id')->on('account_balance')->onDelete('cascade');
             $table->double('amount_change');
             $table->string('description');
             $table->timestamps();
         });
 
-        Scheme::create('transactions', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('retailer_id');
             $table->double('amount');
             $table->string('status', 10);

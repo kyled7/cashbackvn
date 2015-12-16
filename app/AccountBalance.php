@@ -11,4 +11,13 @@ class AccountBalance extends Model
         'user_id',
         'amount'
     ];
+
+    /**
+     * Account balance has many history records
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function history()
+    {
+        return $this->hasMany('App\AccountBalanceHistory');
+    }
 }
