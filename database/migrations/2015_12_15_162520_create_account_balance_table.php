@@ -47,8 +47,8 @@ class CreateAccountBalanceTable extends Migration
      */
     public function down()
     {
-        Schema::drop('account_balance');
         Schema::drop('account_balance_history');
+        Schema::drop('account_balance');
         Schema::drop('transactions');
     }
 }
