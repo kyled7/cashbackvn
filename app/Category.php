@@ -22,4 +22,14 @@ class Category extends Model implements SluggableInterface
         'save_to' => 'slug',
         'on_update' => true
     ];
+
+    /**
+     * Category has many retailer
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function retailers()
+    {
+        return $this->belongsToMany('App\Retailer', 'retailer_category', 'category_id')->withTimestamps();
+    }
 }
