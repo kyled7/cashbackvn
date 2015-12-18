@@ -32,7 +32,7 @@
                         @foreach($retailers as $retailer)
                             <tr>
                                 <td><a href="{{ route('admin.retailers.show', $retailer->id) }}">{{ $retailer->name }}</a></td>
-                                <td><img src="{{ $retailer->logo }}" class="img-thumbnail" > </td>
+                                <td><img src="{{ url('images/'. $retailer->logo) }}" class="img-thumbnail"></td>
                                 <td>{{ $retailer->link }}</td>
                                 <td>{{ $retailer->cashback_value }}</td>
                                 <td>{{ $retailer->cashback_type }}</td>

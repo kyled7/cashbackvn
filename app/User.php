@@ -31,7 +31,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'provider', 'social_id'];
+    protected $fillable = ['name', 'email', 'password', 'is_admin', 'provider', 'social_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -79,6 +79,15 @@ class User extends Model implements AuthenticatableContract,
     }
 
     /**
+     * Get rejected transaction amount
+     * @return mixed
+     */
+    public function getRejectedAmountAttribute()
+    {
+        return $this->transactions->where('status', 'rejected')->sum('amount');
+    }
+
+    /**
      * Get total account balance amount
      * @return mixed
      */
@@ -88,7 +97,7 @@ class User extends Model implements AuthenticatableContract,
     }
 
     /**
-     * Implement user events
+     * Implement new user created events
      */
     public static function boot()
     {

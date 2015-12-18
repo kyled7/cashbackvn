@@ -7,7 +7,9 @@ use App\Category;
 use App\Http\Controllers\AdminController;
 use App\Retailer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class RetailersController extends AdminController
 {
@@ -44,12 +46,24 @@ class RetailersController extends AdminController
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'logo' => 'image'
         ]);
 
-        $retailer = Retailer::create($request->all());
+        $data = $request->all();
 
-        $retailer->categories()->attach($request->input('category_list'));
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $filename = time() . '_' . $logo->getClientOriginalName();
+            Storage::put('images/' . $filename, File::get($logo));
+            $data['logo'] = $filename;
+        }
+
+        $retailer = Retailer::create($data);
+
+        if ($request->input('category_list')) {
+            $retailer->categories()->attach($request->input('category_list'));
+        }
 
         Session::flash('message', 'Successfully created retailer!');
         return redirect()->to('admin/retailers');
@@ -96,12 +110,28 @@ class RetailersController extends AdminController
         $retailer = Retailer::findOrFail($id);
 
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'logo' => 'image'
         ]);
 
-        $retailer->fill($request->all())->save();
+        $data = $request->all();
 
-        $retailer->categories()->sync($request->input('category_list'));
+        if ($request->hasFile('logo')) {
+            if (Storage::has('images/' . $retailer->logo)) {
+                Storage::delete('images/' . $retailer->logo);
+            }
+
+            $logo = $request->file('logo');
+            $filename = time() . '_' . $logo->getClientOriginalName();
+            Storage::put('images/' . $filename, File::get($logo));
+            $data['logo'] = $filename;
+        }
+
+        $retailer->fill($data)->save();
+
+        if ($request->input('category_list')) {
+            $retailer->categories()->sync($request->input('category_list'));
+        }
 
         Session::flash('message', 'Successfully update retailer!');
         return redirect()->to('admin/retailers');
@@ -116,6 +146,9 @@ class RetailersController extends AdminController
     public function destroy($id)
     {
         $retailer = Retailer::findOrFail($id);
+        if (Storage::has('images/' . $retailer->logo)) {
+            Storage::delete('images/' . $retailer->logo);
+        }
         $retailer->delete();
 
         Session::flash('message', 'Successfully delete retailer!');

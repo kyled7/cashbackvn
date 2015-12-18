@@ -14,9 +14,14 @@
     {!! Form::select('category_list[]', $categories, null, ['class' => 'form-control categories', 'multiple']) !!}
 </div>
 
-<div class="form-group">
-    {!! Form::label('logo', 'Logo URL', ['class' => 'control-label']) !!}
-    {!! Form::text('logo', null, ['class' => 'form-control']) !!}
+<div class="form-group @if ($errors->has('logo')) has-error @endif">
+    {!! Form::label('logo', 'Logo', ['class' => 'control-label']) !!}
+    @if (isset($retailer->logo))
+        <img src="{{ url('images/'. $retailer->logo) }}" class="img-thumbnail form-control"
+             style="width: 200px; height: auto">
+    @endif
+    {!! Form::file('logo', null, ['class' => 'form-control']) !!}
+    @if ($errors->has('logo')) <p class="help-block">{{ $errors->first('logo') }}</p> @endif
 </div>
 
 <div class="form-group">
@@ -41,6 +46,7 @@
 
 <div class="form-group">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+    <a href="{{ route('admin.retailers.index') }}" class="btn btn-default">Back</a>
 </div>
 
 <script src="{{ asset ("/lib/AdminLTE/plugins/select2/select2.full.min.js") }}"></script>

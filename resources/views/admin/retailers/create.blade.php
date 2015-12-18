@@ -7,7 +7,7 @@
             <div class="box">
 
                 <div class="box-body">
-                    {!! Form::open(['url' => 'admin/retailers']) !!}
+                    {!! Form::open(['url' => 'admin/retailers', 'files'=>true]) !!}
 
                     @include('admin/retailers/_form')
 

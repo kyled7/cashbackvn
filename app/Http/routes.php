@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Storage;
+
 Route::get('/', 'HomeController@index');
 
 Route::controllers([
@@ -29,4 +31,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => 'auth'], function() {
     Route::get('/', 'SettingController@getIndex');
     Route::controller('setting', 'SettingController');
+});
+
+Route::get('/images/{filename}', function ($filename) {
+    if (Storage::has('images/' . $filename)) {
+        $file = Storage::get('images/' . $filename);
+        $type = Storage::mimeType('images/' . $filename);
+        return response($file)->header('Content-Type', $type);
+    }
 });

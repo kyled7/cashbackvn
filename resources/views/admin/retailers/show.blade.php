@@ -25,7 +25,8 @@
                             Logo
                         </div>
                         <div class="col-sm-10">
-                            {{ $retailer->logo }}
+                            <img src="{{ url('images/'. $retailer->logo) }}" class="img-thumbnail form-control"
+                                 style="width: 200px; height: auto">
                         </div>
                     </div>
 

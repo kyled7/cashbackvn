@@ -25,7 +25,8 @@ class Retailer extends Model implements SluggableInterface
 
     protected $sluggable = [
         'build_from' => 'name',
-        'save_to' => 'slug'
+        'save_to' => 'slug',
+        'on_update' => true
     ];
 
     /**
