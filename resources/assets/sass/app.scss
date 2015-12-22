@@ -8,6 +8,12 @@ body {
   background: url("../lib/Bootflat/bootflat/img/check_flat/default.png") no-repeat;
 }
 
+.navbar-fixed-top {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
 .mega-dropdown {
   position: static !important;
   width: 100%;
@@ -69,6 +75,40 @@ body {
       margin-left: 20px;
     }
   }
+}
+
+.marchant-container {
+  overflow: hidden;
+  .merchant-item {
+    position: relative;
+    img {
+      height: 120px;
+    }
+    .overlay {
+      background: #f6bb42;
+      top: 0;
+      left: 0;
+      height: 0;
+      position: absolute;
+      transition: height 500ms ease 0s;
+      width: 100%;
+      display: block;
+      opacity: 1;
+      border-radius: 4px;
+      .overlay-content {
+        bottom: 50px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        color: white;
+      }
+    }
+  }
+}
+
+.merchant-item:hover .overlay {
+  display: block;
+  height: 100%;
 }
 
 @media (min-width: 768px) and (max-width: 992px) {

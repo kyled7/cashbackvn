@@ -69,83 +69,145 @@
                 @endif
             </div>
         </div>
-    </div>
-    <div class="main">
-        <div class="container">
+        <div class="row">
             <div class="col-lg-12 wow fadeInDown">
                 <h2 class="page-header">Khuyến mại hot</h2>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-sm-4 col-md-3 wow fadeInDown">
-                <div class="thumbnail">
+            <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
+                <a href="#" class="thumbnail merchant-item">
                     <img src="http://vn-live-g.slatic.net/images/logo-og-vn.jpg" alt="...">
 
-                    <div class="caption">
+                    <div class="caption text-center">
                         <h3>Lazada.vn</h3>
                     </div>
-                </div>
+
+                    <div class="overlay text-center">
+                        <div class="overlay-content">
+                            <h4>Hoàn tiền</h4>
+
+                            <h2>10%</h2>
+                        </div>
+                    </div>
+                </a>
             </div>
 
             <div class="col-xs-4 col-xs-offset-4 wow fadeInDown">
