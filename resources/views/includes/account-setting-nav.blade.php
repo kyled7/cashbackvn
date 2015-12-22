@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs nav-justified">
+<ul class="nav nav-tabs">
     <li role="presentation" class="active">
         <a href="{{ action('Account\SettingController@getIndex') }}">{{ trans('message.account-setting-tab') }}</a>
     </li>

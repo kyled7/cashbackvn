@@ -12,10 +12,11 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-material-design": "~0.4.4",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.5.0",
     "AdminLTE": "admin-lte#~2.3.2",
-    "wow": "wowjs#~1.1.2"
+    "wow": "wowjs#~1.1.2",
+    "Bootflat": "~2.0.4",
+    "bootstrap-autohidingnavbar": "~1.0.4"
   }
 }

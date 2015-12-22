@@ -46,6 +46,6 @@ return [
     | Homepage
     |--------------------------------------------------------------------------
     */
-    'search_placeholder' => 'Tìm website bán hàng...',
-    'search_button' => 'Tìm'
+    'search-placeholder' => 'Tìm website bán hàng...',
+    'search-button' => 'Tìm'
 ];

@@ -4,7 +4,7 @@
 <title>@yield('title')</title>
 
 <link href="{{ URL::asset('lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('gsd/css/get-shit-done.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('lib/Bootflat/bootflat/css/bootflat.min.css') }}" rel="stylesheet">
 
 <link href="{{ URL::asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
@@ -16,14 +16,9 @@
 <script src="{{ URL::asset('lib/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
-<script src="{{ URL::asset('gsd/js/gsdk-checkbox.js') }}"></script>
-<script src="{{ URL::asset('gsd/js/gsdk-radio.js') }}"></script>
-<script src="{{ URL::asset('gsd/js/gsdk-bootstrapswitch.js') }}"></script>
-<script src="{{ URL::asset('gsd/js/get-shit-done.js') }}"></script>
-
 <script src="{{ URL::asset('lib/wow/dist/wow.min.js') }}"></script>
+<script src="{{ URL::asset('lib/Bootflat/bootflat/js/icheck.min.js') }}"></script>
+<script src="{{ URL::asset('lib/bootstrap-autohidingnavbar/dist/jquery.bootstrap-autohidingnavbar.min.js') }}"></script>
+<script src="{{ URL::asset('js/cashback.js') }}"></script>
 
-<script>
-    new WOW().init();
-</script>
 
