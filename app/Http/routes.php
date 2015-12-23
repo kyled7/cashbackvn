@@ -13,9 +13,7 @@
 
 use Illuminate\Support\Facades\Storage;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 Route::controllers([
     'user' => 'Auth\AuthController',
@@ -33,6 +31,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => 'auth'], function() {
     Route::get('/', 'SettingController@getIndex');
     Route::controller('setting', 'SettingController');
+    Route::controller('cashback', 'CashbackController');
+    Route::controller('redeem', 'RedeemController');
 });
 
 Route::get('/images/{filename}', function ($filename) {

@@ -10,7 +10,18 @@ class Transaction extends Model
     protected $fillable = [
         'user_id',
         'retailer_id',
-        'amount',
+        'order_price',
+        'cashback_amount',
         'status'
     ];
+
+    public function retailer()
+    {
+        return $this->belongsTo('App\Retailer');
+    }
+
+    public function getRetailerNameAttribute()
+    {
+        return $this->retailer->name;
+    }
 }

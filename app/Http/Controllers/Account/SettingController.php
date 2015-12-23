@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Account;
 
-use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,7 +12,8 @@ class SettingController extends Controller
 {
     public function getIndex()
     {
-        return view('account.setting.index');
+        $user = \Auth::user()->load('account_setting')->toArray();
+        return view('account.setting.index')->with('user', $user);
     }
 
     public function postUpdate(Request $request)
@@ -21,10 +21,20 @@ class SettingController extends Controller
         $user = \Auth::user();
 
         $this->validate($request, [
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'account_setting.bank_name' => 'required|max:255',
+            'account_setting.bank_branch' => 'required|max:255',
+            'account_setting.account_number' => 'required|max:255',
+            'account_setting.account_name' => 'required|max:255',
         ]);
 
-        $user->fill($request->all())->save();
+        $user->update($request->all());
+
+        if ($user->account_setting) {
+            $user->account_setting->update($request->account_setting);
+        } else {
+            $user->account_setting()->create($request->account_setting);
+        }
 
         Session::flash('message', 'Successfully update user info!');
         return redirect()->to('account');

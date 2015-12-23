@@ -5,9 +5,14 @@
 $(function () {
     new WOW().init();
 
-    $('input').iCheck({
+    $("input[type='checkbox']").iCheck({
         checkboxClass: 'icheckbox_flat'
     });
+
+    $("input[type='number']").stepper();
+    //$("input[type='number']").keypress(function(event){
+    //    event.preventDefault();
+    //});
 
     $(".navbar-fixed-top").autoHidingNavbar();
 });

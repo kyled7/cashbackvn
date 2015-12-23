@@ -18,6 +18,7 @@
 
 <script src="{{ URL::asset('lib/wow/dist/wow.min.js') }}"></script>
 <script src="{{ URL::asset('lib/Bootflat/bootflat/js/icheck.min.js') }}"></script>
+<script src="{{ URL::asset('lib/Bootflat/bootflat/js/jquery.fs.stepper.min.js') }}"></script>
 <script src="{{ URL::asset('lib/bootstrap-autohidingnavbar/dist/jquery.bootstrap-autohidingnavbar.min.js') }}"></script>
 <script src="{{ URL::asset('js/cashback.js') }}"></script>
 

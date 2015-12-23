@@ -111,6 +111,14 @@ body {
   height: 100%;
 }
 
+.stepper-input {
+  position: relative;
+  .stepper .stepper-arrow {
+    right: 0px;
+  }
+}
+
+
 @media (min-width: 768px) and (max-width: 992px) {
   .search-form {
     margin-left: 10%;

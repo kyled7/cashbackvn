@@ -51,6 +51,15 @@ class User extends Model implements AuthenticatableContract,
     }
 
     /**
+     * An user has one (bank) account setting
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function account_setting()
+    {
+        return $this->hasOne('App\AccountSetting');
+    }
+
+    /**
      * An user has many transactions
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -58,6 +67,16 @@ class User extends Model implements AuthenticatableContract,
     public function transactions()
     {
         return $this->hasMany('App\Transaction');
+    }
+
+    /**
+     * An user has many redeem requests
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function redeem_requets()
+    {
+        return $this->hasMany('App\RedeemRequest');
     }
 
     /**
@@ -75,7 +94,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function getPendingAmountAttribute()
     {
-        return $this->transactions->where('status', 'pending')->sum('amount');
+        return $this->transactions->where('status', 'pending')->sum('cashback_amount');
     }
 
     /**
@@ -84,7 +103,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function getRejectedAmountAttribute()
     {
-        return $this->transactions->where('status', 'rejected')->sum('amount');
+        return $this->transactions->where('status', 'rejected')->sum('cashback_amount');
     }
 
     /**
@@ -94,6 +113,11 @@ class User extends Model implements AuthenticatableContract,
     public function getTotalAmountAttribute()
     {
         return $this->available_amount + $this->pending_amount;
+    }
+
+    public function getPendingRedeemRequestAttribute()
+    {
+        return $this->redeem_requets()->where('status', '<>', 'closed')->first();
     }
 
     /**

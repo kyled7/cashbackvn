@@ -34,7 +34,8 @@ class CreateAccountBalanceTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('retailer_id');
-            $table->double('amount');
+            $table->double('order_price');
+            $table->double('cashback_amount');
             $table->string('status', 10);
             $table->timestamps();
         });

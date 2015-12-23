@@ -39,7 +39,7 @@
                 @if(Auth::user())
                     <h3 class="title">Xin chào, {{ Auth::user()->name }}</h3>
                     <p>
-                        Tổng tài khoản: <b>{{ number_format(Auth::user()->available_amount, 0, ',', '.') }}</b> đ
+                        Tổng tài khoản: <b>{{ number_format(Auth::user()->total_amount, 0, ',', '.') }}</b> đ
                     </p>
                     <p>
                         Số dư khả dụng: <b>{{ number_format(Auth::user()->available_amount, 0, ',', '.') }}</b> đ
@@ -50,7 +50,8 @@
                     <p>
                         Giao dịch huỷ bỏ: <b>{{ number_format(Auth::user()->rejected_amount, 0, ',', '.') }}</b> đ
                     </p>
-                    <a href="{{ url('#') }}" class="btn btn-warning center-block">Xem chi tiết!</a>
+                    <a href="{{ action('Account\CashbackController@getIndex') }}" class="btn btn-warning center-block">Xem
+                        chi tiết!</a>
                 @else
                     <h3 class="title">Hoàn tiền dễ dàng</h3>
                     <p>
@@ -69,6 +70,8 @@
                 @endif
             </div>
         </div>
+
+        {{--Home retailer--}}
         <div class="row">
             <div class="col-lg-12 wow fadeInDown">
                 <h2 class="page-header">Khuyến mại hot</h2>
@@ -215,5 +218,6 @@
             </div>
         </div>
     </div>
+
 @stop
 

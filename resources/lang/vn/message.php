@@ -34,12 +34,19 @@ return [
     'account'       => 'Tài khoản',
     'account-setting' => 'Thiết lập',
     'account-setting-tab' => 'Cá nhân',
-    'account-earning-tab' => 'Tài khoản',
-    'account-payment-tab' => 'Rút tiền',
+    'account-earning-tab' => 'Tài khoản hoàn tiền',
+    'account-payment-tab' => 'Thanh toán',
     'account-update' => 'Cập nhật',
     'origin-password' => 'Mật khẩu hiện tại',
     'new-password' => 'Mật khẩu mới',
     'account-changepassword-btn' => 'Đổi mật khẩu',
+    'bank-name' => 'Ngân hàng',
+    'bank-branch' => 'Chi nhánh',
+    'bank-account-name' => 'Tên tài khoản',
+    'bank-account-number' => 'Số tài khoản',
+    'status-pending' => 'Chờ xác nhận',
+    'status-completed' => 'Đã xác nhận',
+    'status-rejected' => 'Đã hủy',
 
     /*
     |--------------------------------------------------------------------------
