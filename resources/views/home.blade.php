@@ -214,7 +214,8 @@
             </div>
 
             <div class="col-xs-4 col-xs-offset-4 wow fadeInDown">
-                <a href="#" class="btn btn-lg btn-warning btn-block">Xem tất cả...</a>
+                <a href="{{ action('RetailerController@index') }}" class="btn btn-lg btn-warning btn-block">Xem tất
+                    cả...</a>
             </div>
         </div>
     </div>
