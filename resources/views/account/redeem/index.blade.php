@@ -100,7 +100,7 @@
         $(function () {
             // Set up the number formatting.
             $('#requested_amount').spinner({
-                numberFormat: "C"
+                numberFormat: "C0"
             });
         });
     </script>

@@ -18,8 +18,9 @@
                     <div class="panel-heading">
                         <h4>Tổng tài khoản:</h4>
 
-                        <h2 class="text-center">{{number_format(Auth::user()->total_amount, 0, ',', '.')}}<span
-                                    class="small">đ</span></h2>
+                        <h2 class="text-center">
+                            <span class="currency">{{ Auth::user()->total_amount }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -28,8 +29,9 @@
                     <div class="panel-heading">
                         <h4>Tài khoản khả dụng:</h4>
 
-                        <h2 class="text-center">{{number_format(Auth::user()->available_amount, 0, ',', '.')}}<span
-                                    class="small">đ</span></h2>
+                        <h2 class="text-center">
+                            <span class="currency">{{ Auth::user()->available_amount }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -38,8 +40,9 @@
                     <div class="panel-heading">
                         <h4>Chờ xác nhận:</h4>
 
-                        <h2 class="text-center">{{number_format(Auth::user()->pending_amount, 0, ',', '.')}}<span
-                                    class="small">đ</span></h2>
+                        <h2 class="text-center">
+                            <span class="currency">{{ Auth::user()->pending_amount }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -48,8 +51,9 @@
                     <div class="panel-heading">
                         <h4>Giao dịch hủy:</h4>
 
-                        <h2 class="text-center">{{number_format(Auth::user()->rejected_amount, 0, ',', '.')}} <span
-                                    class="small"> đ</span></h2>
+                        <h2 class="text-center">
+                            <span class="currency">{{ Auth::user()->rejected_amount }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -74,10 +78,12 @@
                             <tr>
                                 <td>{{$transation->created_at}}</td>
                                 <td>{{$transation->retailer_name}}</td>
-                                <td>{{number_format($transation->order_price, 0, ',', '.')}}<span class="small">đ</span>
+                                <td>
+                                    <span class="currency">{{ $transation->order_price }}</span>
                                 </td>
-                                <td>{{number_format($transation->cashback_amount, 0, ',', '.')}}<span
-                                            class="small">đ</span></td>
+                                <td>
+                                    <span class="currency">{{ $transation->cashback_amount }}</span>
+                                </td>
                                 <td>
                                     <span class="label
                                         @if($transation->status == 'completed')

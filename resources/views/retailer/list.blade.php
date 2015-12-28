@@ -5,7 +5,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-12 wow fadeInDown">
+            <div class="col-lg-12">
                 <h2 class="page-header">Trang mua hàng A-Z</h2>
             </div>
             <div class="retailer-list">

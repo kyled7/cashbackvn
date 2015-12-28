@@ -6,16 +6,17 @@ $(function () {
     new WOW().init();
 
     window.Globalize.cultureSelector = 'vi-VN';
-    window.Globalize.cultures['vi-VN'].numberFormat.currency.decimals = 0;
 
     $("input[type='checkbox']").iCheck({
         checkboxClass: 'icheckbox_flat'
     });
 
-    //$("input[type='number']").stepper();
-    //$("input[type='number']").keypress(function(event){
-    //    event.preventDefault();
-    //});
+    $("span.currency").each(function (i, elm) {
+        elm.innerText = Globalize.format(Globalize.parseInt(elm.innerText), "C0");
+    })
+
+    //console.log($("span.currency").innerText);
+    //$(".currency").text(Globalize.format( $(".currency").innerText, "c" ))
 
     $(".navbar-fixed-top").autoHidingNavbar();
 });

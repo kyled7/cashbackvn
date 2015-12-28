@@ -39,16 +39,16 @@
                 @if(Auth::user())
                     <h3 class="title">Xin chào, {{ Auth::user()->name }}</h3>
                     <p>
-                        Tổng tài khoản: <b>{{ number_format(Auth::user()->total_amount, 0, ',', '.') }}</b> đ
+                        Tổng tài khoản: <b><span class="currency">{{ Auth::user()->total_amount }}</span></b>
                     </p>
                     <p>
-                        Số dư khả dụng: <b>{{ number_format(Auth::user()->available_amount, 0, ',', '.') }}</b> đ
+                        Số dư khả dụng: <b><span class="currency">{{ Auth::user()->available_amount }}</span></b>
                     </p>
                     <p>
-                        Chờ xác nhận: <b>{{ number_format(Auth::user()->pending_amount, 0, ',', '.') }}</b> đ
+                        Chờ xác nhận: <b><span class="currency">{{ Auth::user()->pending_amount }}</span></b>
                     </p>
                     <p>
-                        Giao dịch huỷ bỏ: <b>{{ number_format(Auth::user()->rejected_amount, 0, ',', '.') }}</b> đ
+                        Giao dịch huỷ bỏ: <b><span class="currency">{{ Auth::user()->rejected_amount }}</span></b>
                     </p>
                     <a href="{{ action('Account\CashbackController@getIndex') }}" class="btn btn-warning center-block">Xem
                         chi tiết!</a>
