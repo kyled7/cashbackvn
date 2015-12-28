@@ -1,6 +1,5 @@
 @extends('layouts.default')
 
-
 @section('title', trans('message.account-payment-tab'))
 
 @section('content')
@@ -30,15 +29,13 @@
 
                         <div class="form-group ">
                             {!! Form::label('requested_amount', 'Số tiền muốn thanh toán', ['class' => 'control-label']) !!}
-                            <div class="stepper-input">
-                                {!! Form::input('number', 'requested_amount', 100000, [
-                                    'class' => 'form-control',
-                                    'step'=> '100000',
-                                    'min' => '100000',
-                                    'max' => Auth::user()->available_amount,
-                                    'onkeydown' => 'return false'
-                                ]) !!}
-                            </div>
+                            {!! Form::text('requested_amount', 100000, [
+                                'class' => 'form-control',
+                                'step'=> '100000',
+                                'min' => '100000',
+                                'max' => Auth::user()->available_amount,
+                                'onKeyDown' => 'return false'
+                            ]) !!}
                         </div>
 
                         {!! Form::close() !!}
@@ -99,4 +96,12 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function () {
+            // Set up the number formatting.
+            $('#requested_amount').spinner({
+                numberFormat: "C"
+            });
+        });
+    </script>
 @stop

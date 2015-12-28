@@ -1,11 +1,14 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bower_components/Bootflat/bootflat/scss/bootflat";
+@import "bower_components/font-awesome/scss/font-awesome";
+
 body {
   padding-top: 70px;
 }
 
 .icheckbox_flat,
 .iradio_flat {
-  background: url("../lib/Bootflat/bootflat/img/check_flat/default.png") no-repeat;
+  background: url("../img/check_flat/default.png") no-repeat;
 }
 
 .navbar-fixed-top {

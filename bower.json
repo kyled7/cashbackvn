@@ -12,11 +12,13 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5",
     "font-awesome": "~4.5.0",
     "AdminLTE": "admin-lte#~2.3.2",
     "wow": "wowjs#~1.1.2",
     "Bootflat": "~2.0.4",
-    "bootstrap-autohidingnavbar": "~1.0.4"
+    "bootstrap-autohidingnavbar": "~1.0.4",
+    "jquery-ui": "jqueryui#~1.11.4",
+    "globalize": "0.1.1",
+    "bootstrap-sass": "~3.3.6"
   }
 }

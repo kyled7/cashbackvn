@@ -1,7 +1,8 @@
 /vendor
-/public/lib
+/bower_components
 /node_modules
 **/.DS_Store
 Homestead.yaml
 Homestead.json
 .env
+*.iml

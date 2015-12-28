@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    {!!  Html::script('/js/jquery.jscroll.min.js')  !!}
+    {!!  Html::script('js/jquery.jscroll.min.js')  !!}
     <div class="container">
 
         <div class="row">

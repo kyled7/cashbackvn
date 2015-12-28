@@ -49,7 +49,6 @@
     <a href="{{ route('admin.retailers.index') }}" class="btn btn-default">Back</a>
 </div>
 
-<script src="{{ asset ("/lib/AdminLTE/plugins/select2/select2.full.min.js") }}"></script>
 <script>
     $(function () {
         $(".categories").select2();
