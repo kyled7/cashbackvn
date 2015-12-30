@@ -1,37 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kyledinh
- * Date: 11/22/15
- * Time: 10:42 AM
- */
 
-return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Auth
-    |--------------------------------------------------------------------------
-    */
-    'login'         => 'Đăng nhập',
-    'logout'        => 'Thoát',
-    'register'      => 'Đăng ký',
-    'email'         => 'Email:',
-    'password'      => 'Mật khẩu:',
-    'remember'      => 'Ghi nhớ đăng nhập',
-    'forgot-password'   => 'Quên mật khẩu?',
-    'name'          => 'Họ tên',
+return array(
+    'login' => 'Đăng nhập',
+    'logout' => 'Thoát',
+    'register' => 'Đăng ký',
+    'email' => 'Email:',
+    'password' => 'Mật khẩu:',
+    'remember' => 'Ghi nhớ đăng nhập',
+    'forgot-password' => 'Quên mật khẩu?',
+    'name' => 'Họ tên',
     'password-confirmation' => 'Xác nhận mật khẩu',
     'reset-password-notice' => 'Vui lòng nhập địa chỉ email, chúng tôi sẽ gửi thông tin hướng dẫn khởi tạo lại mật khẩu',
-    'reset-password'    => 'Tạo lại mật khẩu',
+    'reset-password' => 'Tạo lại mật khẩu',
     'reset-password-submit' => 'Gửi',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Account setting
-    |--------------------------------------------------------------------------
-    */
-    'account'       => 'Tài khoản',
+    'account' => 'Tài khoản',
     'account-setting' => 'Thiết lập',
     'account-setting-tab' => 'Cá nhân',
     'account-earning-tab' => 'Tài khoản hoàn tiền',
@@ -47,12 +29,17 @@ return [
     'status-pending' => 'Chờ xác nhận',
     'status-completed' => 'Đã xác nhận',
     'status-rejected' => 'Đã hủy',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Homepage
-    |--------------------------------------------------------------------------
-    */
     'search-placeholder' => 'Tìm website bán hàng...',
-    'search-button' => 'Tìm'
-];
+    'search-button' => 'Tìm',
+    'redeem_cancel_confirm' => 'Xác nhận hủy yêu cầu thanh toán?',
+    'redeem_request_submitted_message' => 'Gửi yêu cầu thanh toán thành công.',
+    'redeem_request_updated_message' => 'Yêu cầu thanh toán đã được chỉnh sửa.',
+    'redeem_request_deleted_message' => 'Yêu cầu thanh toán đã được hủy!',
+    'init-account-reward' => 'Quà tặng tạo tài khoản mới',
+    'redeem_request_update' => 'Chỉnh sửa',
+    'redeem_cancel_button' => 'Hủy',
+    'redeem_request' => 'Yêu cầu thanh toán',
+    'or-login-with' => 'Hoặc đăng nhập với',
+    'redeem_requets_status_submitted' => 'Đã gửi',
+    'redeem_requets_status_processing' => 'Đang xử lý',
+);

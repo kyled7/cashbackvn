@@ -139,6 +139,7 @@ return [
         Illuminate\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
 
         /*
          * Application Service Providers...
