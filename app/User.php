@@ -74,7 +74,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function redeem_requets()
+    public function redeem_request()
     {
         return $this->hasMany('App\RedeemRequest');
     }
@@ -117,7 +117,7 @@ class User extends Model implements AuthenticatableContract,
 
     public function getPendingRedeemRequestAttribute()
     {
-        return $this->redeem_requets()->where('status', '<>', 'closed')->first();
+        return $this->redeem_request()->where('status', '<>', 'closed')->first();
     }
 
     /**

@@ -19,15 +19,54 @@
                     <p class="lead">Tài khoản của bạn chưa đủ để yêu cầu thanh toán.</p>
                 </div>
             @else
-                @if(Auth::user()->pending_redeem_request)
-                    Show pending request
+                @if($pending_redeem_request)
+                    <div class="col-md-6">
+                        <h3 class="lead">Yêu cầu thanh toán hiện tại</h3>
+                        {!! Form::model($pending_redeem_request, [
+                            'method' => 'PATCH',
+                            'url' => ['account/redeem/update', $pending_redeem_request],
+                            'onsubmit' => 'formSubmit()']) !!}
+
+                        <div class="form-group">
+                            {!! Form::label('requested_amount', 'Số tiền muốn thanh toán', ['class' => 'control-label']) !!}
+                            {!! Form::text('requested_amount', null, [
+                                'class' => 'form-control',
+                                'step'=> '100000',
+                                'min' => '100000',
+                                'max' => Auth::user()->available_amount,
+                                'onKeyDown' => 'return false'
+                            ]) !!}
+                        </div>
+
+                        <div class="form-group">
+                            Ngày tạo yêu cầu: {{ $pending_redeem_request->created_at }}
+                        </div>
+                        <div class="form-group">
+                            Trạng thái: {{ trans('message.redeem_requets_status_'.$pending_redeem_request->status) }}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::submit(trans('message.redeem_request_update'), ['class' => 'btn btn-warning btn-lg']) !!}
+                            {!! Form::close() !!}
+
+                            {!! Form::open([
+                                        'method' => 'DELETE',
+                                        'url' => ['account/redeem/destroy', $pending_redeem_request->id],
+                                        'onsubmit' => "return confirm('{$confirm_message}');",
+                                        'class' => 'inline'
+                                    ]) !!}
+                            {!! Form::submit(trans('message.redeem_cancel_button'), ['class' => 'btn btn-danger btn-lg']) !!}
+                            {!! Form::close() !!}
+                        </div>
+
+                    </div>
                 @else
                     {{--Show requets form--}}
                     <div class="col-md-6">
                         <h3 class="lead">Yêu cầu thanh toán</h3>
-                        {!! Form::open(['url' => 'account/redeem']) !!}
+                        {!! Form::open(['url' => 'account/redeem/create', 'onsubmit' => 'formSubmit()']) !!}
 
-                        <div class="form-group ">
+                        <div class="form-group">
                             {!! Form::label('requested_amount', 'Số tiền muốn thanh toán', ['class' => 'control-label']) !!}
                             {!! Form::text('requested_amount', 100000, [
                                 'class' => 'form-control',
@@ -36,6 +75,10 @@
                                 'max' => Auth::user()->available_amount,
                                 'onKeyDown' => 'return false'
                             ]) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::submit(trans('message.redeem_request'), ['class' => 'btn btn-warning btn-lg']) !!}
                         </div>
 
                         {!! Form::close() !!}
@@ -102,6 +145,10 @@
             $('#requested_amount').spinner({
                 numberFormat: "C0"
             });
+
         });
+        function formSubmit() {
+            $('#requested_amount').val($('#requested_amount').attr("aria-valuenow"));
+        }
     </script>
 @stop
