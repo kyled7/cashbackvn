@@ -20,5 +20,7 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-shipit');
+    grunt.loadNpmTasks('shipit-deploy');
+
     grunt.registerTask('deploy', ['deploy:init', 'deploy:update', 'deploy:publish', 'deploy:clean']);
 };
