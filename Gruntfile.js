@@ -5,7 +5,8 @@ module.exports = function (grunt) {
                 ignores: ['node_modules', 'bower_components'],
                 workspace: '.',
                 keepReleases: 2,
-                servers: 'ec2-user@ec2-52-74-55-153.ap-southeast-1.compute.amazonaws.com'
+                servers: 'ec2-user@ec2-52-74-55-153.ap-southeast-1.compute.amazonaws.com',
+                key: './'
             },
             development: {
                 deployTo: '/var/www/cashbackvn/dev'
