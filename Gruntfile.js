@@ -6,7 +6,6 @@ module.exports = function (grunt) {
                 workspace: '.',
                 keepReleases: 2,
                 servers: 'ec2-user@ec2-52-74-55-153.ap-southeast-1.compute.amazonaws.com',
-                key: './cashbackvn.pem'
             },
             development: {
                 deployTo: '/var/www/cashbackvn/dev'
