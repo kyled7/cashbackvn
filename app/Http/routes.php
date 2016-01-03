@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Storage;
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/merchants', 'RetailerController@index');
+Route::get('/stores', 'RetailerController@index');
+Route::get('/stores/{slug}', 'RetailerController@details');
 
 Route::controllers([
     'user' => 'Auth\AuthController',

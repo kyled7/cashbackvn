@@ -11,7 +11,8 @@
             <div class="retailer-list">
                 @foreach($retailers as $retailer)
                     <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
-                        <a href="#" class="thumbnail merchant-item">
+                        <a href="{{ action('RetailerController@details', $retailer->slug) }}"
+                           class="thumbnail merchant-item">
                             <img src="{{ url('images/'. $retailer->logo) }}">
 
                             <div class="caption text-center">
