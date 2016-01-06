@@ -32,4 +32,11 @@ class RetailerController extends Controller
 
         return view('retailer.details', compact('retailer'));
     }
+
+    public function redirect($slug)
+    {
+        $retailer = Retailer::findBySlugOrFail($slug);
+
+        return view('retailer.redirect', compact('retailer'));
+    }
 }

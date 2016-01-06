@@ -49,8 +49,18 @@ class Retailer extends Model implements SluggableInterface
         return $this->belongsToMany('App\Category', 'retailer_category', 'retailer_id')->withTimestamps();
     }
 
+    /**
+     * build category_list attribute
+     * @return mixed
+     */
     public function getCategoryListAttribute()
     {
         return $this->categories->lists('id')->toArray();
+    }
+
+    public function getRedirectLinkAttribute()
+    {
+        $user_id = \Auth::user() ? \Auth::user()->id : '1';
+        return str_replace('user_id', $user_id, $this->link);
     }
 }
