@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Retailer;
+use App\Models\Retailer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

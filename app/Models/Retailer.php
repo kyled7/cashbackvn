@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
@@ -36,7 +36,7 @@ class Retailer extends Model implements SluggableInterface
      */
     public function deals()
     {
-        return $this->hasMany('App\Deal');
+        return $this->hasMany('App\Models\Deal');
     }
 
     /**
@@ -46,7 +46,7 @@ class Retailer extends Model implements SluggableInterface
      */
     public function categories()
     {
-        return $this->belongsToMany('App\Category', 'retailer_category', 'retailer_id')->withTimestamps();
+        return $this->belongsToMany('App\Models\Category', 'retailer_category', 'retailer_id')->withTimestamps();
     }
 
     /**

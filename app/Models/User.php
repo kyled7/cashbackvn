@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -47,7 +47,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function account_balance()
     {
-        return $this->hasOne('App\AccountBalance');
+        return $this->hasOne('App\Models\AccountBalance');
     }
 
     /**
@@ -56,7 +56,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function account_setting()
     {
-        return $this->hasOne('App\AccountSetting');
+        return $this->hasOne('App\Models\AccountSetting');
     }
 
     /**
@@ -66,7 +66,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function transactions()
     {
-        return $this->hasMany('App\Transaction');
+        return $this->hasMany('App\Models\Transaction');
     }
 
     /**
@@ -76,7 +76,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function redeem_request()
     {
-        return $this->hasMany('App\RedeemRequest');
+        return $this->hasMany('App\Models\RedeemRequest');
     }
 
     /**

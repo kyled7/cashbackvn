@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Retailer;
+use App\Models\Retailer;
 
 class HomeController extends Controller
 {

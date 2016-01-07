@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +25,6 @@ class Deal extends Model
      */
     public function retailer()
     {
-        return $this->belongsTo('App\Retailer');
+        return $this->belongsTo('App\Models\Retailer');
     }
 }
