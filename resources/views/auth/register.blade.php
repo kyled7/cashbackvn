@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::submit(trans('message.register'), ['class' => 'btn btn-warning btn-block']) !!}
+                        {!! Form::submit(trans('message.register'), ['class' => 'btn btn-warning btn-block btn-lg']) !!}
                     </div>
                     {!! Form::close() !!}
                 </div>

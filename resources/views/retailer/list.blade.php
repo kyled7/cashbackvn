@@ -21,9 +21,9 @@
 
                             <div class="overlay text-center">
                                 <div class="overlay-content">
-                                    <h4>Hoàn tiền</h4>
+                                    <h4>Hoàn tiền @if($retailer->deals()->count() > 1) đến @endif</h4>
 
-                                    <h2>10%</h2>
+                                    <h2>{{ $retailer->cashback }}</h2>
                                 </div>
                             </div>
                         </a>

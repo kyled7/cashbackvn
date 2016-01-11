@@ -27,4 +27,17 @@ class Deal extends Model
     {
         return $this->belongsTo('App\Models\Retailer');
     }
+
+    /**
+     * Get cashback value with cashback type
+     * @return string
+     */
+    public function getCashbackAttribute()
+    {
+        if ($this->cashback_type == 'percentage') {
+            return $this->cashback_value . '%';
+        } else {
+            return '<span class="currency">' . $this->cashback_value . '</span>';
+        }
+    }
 }

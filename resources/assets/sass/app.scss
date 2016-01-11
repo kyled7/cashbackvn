@@ -121,6 +121,24 @@ body {
   }
 }
 
+.fb-login-button img {
+  height: 45px;
+}
+
+.retailer-details {
+  .deal-table {
+    margin-top: 20px;
+    tr {
+      &.header {
+        background-color: #ccc;
+      }
+      th {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
 
 @media (min-width: 768px) and (max-width: 992px) {
   .search-form {

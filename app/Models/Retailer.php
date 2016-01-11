@@ -58,9 +58,26 @@ class Retailer extends Model implements SluggableInterface
         return $this->categories->lists('id')->toArray();
     }
 
+    /**
+     * Build redirect link to merchant shop
+     * @return mixed
+     */
     public function getRedirectLinkAttribute()
     {
         $user_id = \Auth::user() ? \Auth::user()->id : '1';
         return str_replace('user_id', $user_id, $this->link);
+    }
+
+    /**
+     * Get cashback value with cashback type
+     * @return string
+     */
+    public function getCashbackAttribute()
+    {
+        if ($this->cashback_type == 'percentage') {
+            return $this->cashback_value . '%';
+        } else {
+            return '<span class="currency">' . $this->cashback_value . '</span>';
+        }
     }
 }
