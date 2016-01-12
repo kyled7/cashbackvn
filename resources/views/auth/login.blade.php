@@ -34,6 +34,8 @@
                         </div>
                     </div>
 
+                    {!! Form::hidden('redirect', app('request')->input('redirect')) !!}
+
                     <div class="form-group">
                         {!! Form::submit(trans('message.login'), ['class' => 'btn btn-warning btn-lg btn-block']) !!}
                     </div>

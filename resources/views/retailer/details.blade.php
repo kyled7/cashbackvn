@@ -15,8 +15,14 @@
 
             <div class="col-xs-8">
                 <p class="lead">{{ $retailer->description }}</p>
+                @if (Auth::user())
                 <a href="{{ action('RetailerController@redirect', $retailer->slug) }}" class="btn btn-warning btn-lg"
-                   target="_blank">Mua hàng</a>
+                   target="_blank">Mua hàng và nhận hoàn tiền với {{ $retailer->name }}</a>
+                @else
+                    <a href="{{ action('Auth\AuthController@getLogin') . '?redirect=' . Request::path() }}" class="btn btn-warning btn-lg">
+                        Đăng nhập để nhận hoàn tiền với {{ $retailer->name }}
+                    </a>
+                @endif
             </div>
 
             <div class="col-xs-12">

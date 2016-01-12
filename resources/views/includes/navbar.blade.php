@@ -88,7 +88,7 @@
                         </ul>
                     </li>
                 @else
-                    <li><a class="navbar-link" href='{{ action('Auth\AuthController@getLogin') }}'>
+                    <li><a class="navbar-link" href='{{ action('Auth\AuthController@getLogin') . ((Request::path() == '/') ? '' : '?redirect=' . Request::path()) }}'>
                             {{ trans('message.login') }}
                         </a></li>
                     <li>
