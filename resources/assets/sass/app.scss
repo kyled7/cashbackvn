@@ -148,6 +148,28 @@ body {
   }
 }
 
+.footer {
+  .footer-logo {
+    text-align: center;
+    line-height: 20px;
+    a {
+      font-family: 'Black Ops One', cursive;
+      font-size: x-large;
+      color: #FFF;
+      padding-bottom: 0px;
+    }
+    small {
+      color: #AAB2BD;
+      font-size: small;
+    }
+  }
+  .last-footer-nav {
+    width: 40%;
+  }
+  .footer-nav > .nav-title {
+    text-transform: uppercase;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 992px) {
   .search-form {
