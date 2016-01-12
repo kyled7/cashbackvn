@@ -18,15 +18,16 @@
                 <dd class="nav-item"><a href="#">Liên hệ</a></dd>
             </dl>
             <dl class="footer-nav last-footer-nav">
-                <dt class="nav-title">Kết nối HoanTien.VN</dt>
-                <dd class="nav-item">
-                    <a href="#">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </dd>
+                <dt class="nav-title">
+                <div class="fb-page" data-href="https://www.facebook.com/HoanTienVN.Fanpage" data-tabs="timeline"
+                     data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
+                     data-show-facepile="true">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/HoanTienVN.Fanpage"><a
+                                    href="https://www.facebook.com/HoanTienVN.Fanpage">HoànTiền.VN</a></blockquote>
+                    </div>
+                </div>
+                </dt>
                 <dt class="nav-title">Đăng ký nhận thông báo</dt>
                 <form>
                     <input type="email" placeholder="Nhập email của bạn" name="email">

@@ -53,20 +53,17 @@
                     <a href="{{ action('Account\CashbackController@getIndex') }}" class="btn btn-warning center-block">Xem
                         chi tiết!</a>
                 @else
-                    <h3 class="title">Hoàn tiền dễ dàng</h3>
+                    <h3 class="text-center">Kiếm tiền với HoanTien.VN</h3>
                     <p>
-                        <i class="fa fa-sign-in fa-2x"></i> <span>Tham gia Cashback miễn phí</span>
+                        <i class="fa fa-sign-in fa-2x"></i> <span>1. Đăng nhập HoanTien.VN</span>
                     </p>
                     <p>
-                        <i class="fa fa-shopping-cart fa-2x"></i> <span>Mua sắm trên website yêu thích</span>
+                        <i class="fa fa-shopping-cart fa-2x"></i> <span>2. Mua sắm trên website yêu thích</span>
                     </p>
                     <p>
-                        <i class="fa fa-money fa-2x"></i> <span>Nhận hoàn tiền từ cashback</span>
+                        <i class="fa fa-money fa-2x"></i> <span>3. Nhận tiền từ HoanTien.VN</span>
                     </p>
-                    <div class="text-right">
-                        <a href="#" class="btn btn-info">Tìm hiểu thêm</a>
-                    </div>
-                    <a href="{{ url('user/register') }}" class="btn btn-warning center-block">Bắt đầu ngay!</a>
+                    <a href="{{ url('user/register') }}" class="btn btn-warning btn-lg btn-block">Bắt đầu ngay!</a>
                 @endif
             </div>
         </div>
@@ -74,7 +71,7 @@
         {{--Home retailer--}}
         <div class="row">
             <div class="col-lg-12 wow fadeInDown">
-                <h3 class="page-header">Web mua hàng tiêu biểu</h3>
+                <h3 class="page-header">Website bán hàng</h3>
             </div>
             @foreach($retailers as $retailer)
             <div class="col-sm-4 col-md-3 wow fadeInDown marchant-container">
