@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Welcome!')
+@section('title', 'HoànTiền.VN - Hoàn tiền mua hàng trực tuyến Việt Nam!')
 
 @section('content')
     <div class="container">
