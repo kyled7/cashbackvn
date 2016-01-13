@@ -51,10 +51,10 @@ return [
 
         'sqs' => [
             'driver' => 'sqs',
-            'key'    => 'your-public-key',
-            'secret' => 'your-secret-key',
-            'queue'  => 'your-queue-url',
-            'region' => 'us-east-1',
+            'key'    => 'AKIAJRDYRKVP3LJESRUQ',
+            'secret' => 'jEYf+wqTptC1lCtKWHAwkcKGaW2NiNcHJiYB5LQN',
+            'queue'  => env('SQS_QUEUE', 'your-queue-url'),
+            'region' => 'ap-southeast-1',
         ],
 
         'iron' => [
