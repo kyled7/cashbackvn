@@ -143,7 +143,7 @@ class User extends Model implements AuthenticatableContract,
                 DB::commit();
             }
 
-            Mail::queue('email.welcome', $user, function($message) use ($user) {
+            Mail::queue('email.welcome', compact('user'), function($message) use ($user) {
                 $message->from('info@hoantien.vn', 'HoànTiền.VN');
                 $message->to($user->email, $user->name)->subject(trans('message.welcome-email-title'));
             });
