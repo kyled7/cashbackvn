@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Retailer;
+use App\Models\Retailer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -31,5 +31,12 @@ class RetailerController extends Controller
         $retailer = Retailer::findBySlugOrFail($slug);
 
         return view('retailer.details', compact('retailer'));
+    }
+
+    public function redirect($slug)
+    {
+        $retailer = Retailer::findBySlugOrFail($slug);
+
+        return view('retailer.redirect', compact('retailer'));
     }
 }

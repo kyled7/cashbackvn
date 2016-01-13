@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +25,19 @@ class Deal extends Model
      */
     public function retailer()
     {
-        return $this->belongsTo('App\Retailer');
+        return $this->belongsTo('App\Models\Retailer');
+    }
+
+    /**
+     * Get cashback value with cashback type
+     * @return string
+     */
+    public function getCashbackAttribute()
+    {
+        if ($this->cashback_type == 'percentage') {
+            return $this->cashback_value . '%';
+        } else {
+            return '<span class="currency">' . $this->cashback_value . '</span>';
+        }
     }
 }

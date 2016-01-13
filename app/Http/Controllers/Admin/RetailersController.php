@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Category;
+use App\Models\Category;
 use App\Http\Controllers\AdminController;
-use App\Retailer;
+use App\Models\Retailer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;

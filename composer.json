@@ -1,6 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "cashbackvn",
+    "description": "Cashback VN",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
@@ -11,7 +11,8 @@
         "laravel/socialite": "^2.0",
         "cviebrock/eloquent-sluggable": "^3.1",
         "barryvdh/laravel-translation-manager": "^0.2.1",
-        "league/flysystem-aws-s3-v3": "^1.0"
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "aws/aws-sdk-php": "^3.12"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

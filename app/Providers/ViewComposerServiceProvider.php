@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Category;
+use App\Models\Category;
 use Illuminate\Support\ServiceProvider;
 
 class ViewComposerServiceProvider extends ServiceProvider
@@ -32,7 +32,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         view()->composer('includes.navbar', function ($view) {
             $categories = Category::with(['retailers' => function ($query) {
                 $query->orderBy('created_at', 'desc')->take(5);
-            }])->get()->toArray();
+            }])->get();
 
             $view->with('categories', $categories);
         });

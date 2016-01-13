@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Deal;
-use App\Retailer;
+use App\Models\Deal;
+use App\Models\Retailer;
 use App\Http\Requests;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Session;

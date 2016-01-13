@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">
-                CashbackVN
+                HoanTien.VN
             </a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -21,67 +21,24 @@
                     </button>
 
                     <ul class="dropdown-menu mega-dropdown-menu row">
+                        @foreach($categories as $category)
                         <li class="col-sm-3">
                             <ul>
                                 <li>
                                     <a href="#" class="dropdown-header btn-link">
-                                        <i class="fa fa-mobile"></i> Điện tử & công nghệ
+                                        <i class="fa {{ $category->fa_icon }}"></i> {{ $category->name }}
                                     </a>
                                 </li>
-                                <li><a href="#">Lazada</a></li>
-                                <li><a href="#">Tiki.vn</a></li>
-                                <li><a href="#">Thegioididong.com.vn</a></li>
+                                @foreach($category->retailers as $retailer)
+                                <li><a href="#">{{ $retailer->name }}</a></li>
+                                @endforeach
                                 <li>
                                     <a href="#" class="btn-link text-right detail-link"><i>Xem tất cả</i></a>
                                 </li>
                                 <li class="divider"></li>
                             </ul>
                         </li>
-                        <li class="col-sm-3">
-                            <ul>
-                                <li class="dropdown-header">
-                                    Mẹ và bé
-                                </li>
-                                <li><a href="#">shoptretho.com.vn</a></li>
-                                <li><a href="#">deca.</a></li>
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
-                        <li class="col-sm-3">
-                            <ul>
-                                <li class="dropdown-header">
-                                    <i class="fa fa-suitcase"></i> Du lịch
-                                </li>
-                                <li><a href="#">mytour.vn</a></li>
-                                <li><a href="#">ivivu.com</a></li>
-                                <li><a href="#">yourtour.vn</a></li>
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
-                        <li class="col-sm-3">
-                            <ul>
-                                <li class="dropdown-header">
-                                    <i class="fa fa-suitcase"></i> Thời trang
-                                </li>
-                                <li><a href="#">zalora.vn</a></li>
-                                <li><a href="#">lazada.vn</a></li>
-                                <li><a href="#">blue.vn</a></li>
-                                <li><a href="#">blue.vn</a></li>
-                                <li><a href="#">blue.vn</a></li>
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
-                        <li class="col-sm-3">
-                            <ul>
-                                <li class="dropdown-header">
-                                    <i class="fa fa-suitcase"></i> Du lịch
-                                </li>
-                                <li><a href="#">mytour.vn</a></li>
-                                <li><a href="#">ivivu.com</a></li>
-                                <li><a href="#">yourtour.vn</a></li>
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
+                        @endforeach
                     </ul>
 
                 </li>
@@ -131,7 +88,7 @@
                         </ul>
                     </li>
                 @else
-                    <li><a class="navbar-link" href='{{ action('Auth\AuthController@getLogin') }}'>
+                    <li><a class="navbar-link" href='{{ action('Auth\AuthController@getLogin') . ((Request::path() == '/') ? '' : '?redirect=' . Request::path()) }}'>
                             {{ trans('message.login') }}
                         </a></li>
                     <li>

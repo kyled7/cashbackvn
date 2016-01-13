@@ -1,9 +1,13 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "bower_components/Bootflat/bootflat/scss/bootflat";
 @import "bower_components/font-awesome/scss/font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
   padding-top: 70px;
+  font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+  background-color: #f1f2f6;
 }
 
 .icheckbox_flat,
@@ -15,6 +19,11 @@ body {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.navbar-brand {
+  font-family: 'Black Ops One', cursive;
+  font-size: x-large;
 }
 
 .mega-dropdown {
@@ -121,6 +130,46 @@ body {
   }
 }
 
+.fb-login-button img {
+  height: 45px;
+}
+
+.retailer-details {
+  .deal-table {
+    margin-top: 20px;
+    tr {
+      &.header {
+        background-color: #ccc;
+      }
+      th {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.footer {
+  .footer-logo {
+    text-align: center;
+    line-height: 20px;
+    a {
+      font-family: 'Black Ops One', cursive;
+      font-size: x-large;
+      color: #FFF;
+      padding-bottom: 0px;
+    }
+    small {
+      color: #AAB2BD;
+      font-size: small;
+    }
+  }
+  .last-footer-nav {
+    width: 40%;
+  }
+  .footer-nav > .nav-title {
+    text-transform: uppercase;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 992px) {
   .search-form {

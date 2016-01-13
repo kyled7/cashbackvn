@@ -34,21 +34,21 @@
                         </div>
                     </div>
 
+                    {!! Form::hidden('redirect', app('request')->input('redirect')) !!}
+
                     <div class="form-group">
-                        {!! Form::submit(trans('message.login'), ['class' => 'btn btn-warning btn-block']) !!}
+                        {!! Form::submit(trans('message.login'), ['class' => 'btn btn-warning btn-lg btn-block']) !!}
                     </div>
 
                     {!! Form::close() !!}
 
                     <hr>
-                    <h4 class="title text-center">{{ trans('message.or-login-with') }}</h4>
 
-                    <a href="{{ action('Auth\AuthController@getFacebook') }}">
-                        <i class="fa fa-facebook-official fa-4x"></i>
-                    </a>
-                    <a href="{{ action('Auth\AuthController@getTwitter') }}">
-                        <i class="fa fa-twitter-square fa-4x"></i>
-                    </a>
+                    <div class="row text-center">
+                        <a href="{{ action('Auth\AuthController@getFacebook') }}" class="fb-login-button">
+                            {!! Html::image('img/facebook-login.png') !!}
+                        </a>
+                    </div>
 
                 </div>
             </div>

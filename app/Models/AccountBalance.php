@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,6 +18,6 @@ class AccountBalance extends Model
      */
     public function history()
     {
-        return $this->hasMany('App\AccountBalanceHistory');
+        return $this->hasMany('App\Models\AccountBalanceHistory');
     }
 }

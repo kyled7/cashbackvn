@@ -4,7 +4,7 @@
     @include('includes.head')
 </head>
 <body>
-
+<div id="fb-root"></div>
     @include('includes.navbar')
 
     @yield('content')
