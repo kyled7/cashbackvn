@@ -28,6 +28,11 @@
                     <i class="fa fa-list"></i> <span>Categories</span>
                 </a>
             </li>
+            <li @if(Request::is('admin/users*')) class="active" @endif>
+                <a href="{{ url('admin/users') }}">
+                    <i class="fa fa-user"></i> <span>Users</span>
+                </a>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -30,6 +30,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::resource('retailers', 'RetailersController');
     Route::resource('deals', 'DealsController');
     Route::resource('categories', 'CategoriesController');
+    Route::resource('users', 'UsersController');
 });
 
 Route::group(['namespace' => 'Account', 'prefix' => 'account', 'middleware' => 'auth'], function() {

@@ -14,7 +14,7 @@
 
         <div class="row">
             <div class="col-xs-6">
-                <h3 class="page-header">Thông tin người dùng</h3>
+                <h3 class="page-header">{{ trans('message.user_information') }}</h3>
                 {!! Form::model($user, ['url' => 'account/setting/update', 'class' => 'form-horizontal', 'role' => 'form']) !!}
 
                 <div class="form-group">
@@ -30,7 +30,7 @@
                         @if ($errors->has('name')) <p class="help-block">{{ $errors->first('name') }}</p> @endif
                     </div>
                 </div>
-                <h4>Thông tin thanh toán</h4>
+                <h4>{{ trans('message.payment_information') }}</h4>
 
                 <div class="form-group @if ($errors->has('account_setting.bank_name')) has-error @endif">
                     {!! Form::label('account_setting[bank_name]', trans('message.bank-name'), ['class' => 'control-label col-xs-3']) !!}
@@ -75,7 +75,7 @@
             </div>
 
             <div class="col-xs-6">
-                <h3 class="page-header">Thay đổi mật khẩu</h3>
+                <h3 class="page-header">{{ trans('message.change_password') }}</h3>
                 {!! Form::open(['url' => 'account/setting/changepassword', 'class' => 'form-horizontal', 'role' => 'form']) !!}
                 <div class="form-group @if ($errors->has('origin_password')) has-error @endif">
                     {!! Form::label('origin_password', trans('message.origin-password'), ['class' => 'control-label  col-xs-3']) !!}

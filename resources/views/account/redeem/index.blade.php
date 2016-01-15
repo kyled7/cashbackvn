@@ -16,12 +16,12 @@
             @if(Auth::user()->available_amount < 100000)
                 {{--Not enough money to make payment--}}
                 <div class="col-xs-12">
-                    <p class="lead">Tài khoản của bạn chưa đủ để yêu cầu thanh toán.</p>
+                    <p class="lead">{{ trans('message.redeem_not_enough') }}</p>
                 </div>
             @else
                 @if($pending_redeem_request)
                     <div class="col-md-6">
-                        <h3 class="lead">Yêu cầu thanh toán hiện tại</h3>
+                        <h3 class="lead">{{ trans('message.redeem_pending_request') }}</h3>
                         {!! Form::model($pending_redeem_request, [
                             'method' => 'PATCH',
                             'url' => ['account/redeem/update', $pending_redeem_request],
@@ -39,10 +39,10 @@
                         </div>
 
                         <div class="form-group">
-                            Ngày tạo yêu cầu: {{ $pending_redeem_request->created_at }}
+                            {{ trans('message.redeem_created_at') }}: {{ $pending_redeem_request->created_at }}
                         </div>
                         <div class="form-group">
-                            Trạng thái: {{ trans('message.redeem_requets_status_'.$pending_redeem_request->status) }}
+                            {{ trans('message.redeem_status') }}: {{ trans('message.redeem_requets_status_'.$pending_redeem_request->status) }}
                         </div>
 
                         <div class="form-group">
@@ -63,7 +63,7 @@
                 @else
                     {{--Show requets form--}}
                     <div class="col-md-6">
-                        <h3 class="lead">Yêu cầu thanh toán</h3>
+                        <h3 class="lead">{{ trans('message.redeem_request') }}</h3>
                         {!! Form::open(['url' => 'account/redeem/create', 'onsubmit' => 'formSubmit()']) !!}
 
                         <div class="form-group">
@@ -93,7 +93,7 @@
                             <a role="button" data-toggle="collapse"
                                href="#history-table" aria-expanded="true"
                                aria-controls="history-table">
-                                Xem chi tiết tài khoản chính
+                                {{ trans('message.view_account_balance_history') }}
                             </a>
                         </h4>
                     </div>
@@ -103,10 +103,9 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Ngày</th>
-                                <th>Nội dung</th>
-                                <th>Ghi nợ</th>
-                                <th>Ghi có</th>
+                                <th>{{ trans('message.balance_history_date') }}</th>
+                                <th>{{ trans('message.balance_history_content') }}</th>
+                                <th colspan="2">{{ trans('message.balance_history_change') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -127,7 +126,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" class="text-center">Oops, tài khoản của bạn không có giao dịch nào
+                                    <td colspan="4" class="text-center">{{ trans('message.balance_history_norecord') }}
                                     </td>
                                 </tr>
                             @endforelse

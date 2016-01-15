@@ -16,7 +16,7 @@
             <div class="col-md-3 col-sm-6 wow fadeInDown">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h4>Tổng tài khoản:</h4>
+                        <h4>{{ trans('message.total_amount') }}</h4>
 
                         <h2 class="text-center">
                             <span class="currency">{{ Auth::user()->total_amount }}</span>
@@ -27,7 +27,7 @@
             <div class="col-md-3 col-sm-6 wow fadeInDown">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h4>Tài khoản khả dụng:</h4>
+                        <h4>{{ trans('message.available_amount') }}</h4>
 
                         <h2 class="text-center">
                             <span class="currency">{{ Auth::user()->available_amount }}</span>
@@ -38,7 +38,7 @@
             <div class="col-md-3 col-sm-6 wow fadeInDown">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
-                        <h4>Chờ xác nhận:</h4>
+                        <h4>{{ trans('message.pending_amount') }}</h4>
 
                         <h2 class="text-center">
                             <span class="currency">{{ Auth::user()->pending_amount }}</span>
@@ -49,7 +49,7 @@
             <div class="col-md-3 col-sm-6 wow fadeInDown">
                 <div class="panel panel-danger">
                     <div class="panel-heading">
-                        <h4>Giao dịch hủy:</h4>
+                        <h4>{{ trans('message.rejected_amount') }}</h4>
 
                         <h2 class="text-center">
                             <span class="currency">{{ Auth::user()->rejected_amount }}</span>
@@ -61,16 +61,16 @@
             <div class="col-xs-12 wow fadeInUp">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Chi tiết hoàn tiền</h3>
+                        <h3 class="panel-title">{{ trans('message.detail_cashback') }}</h3>
                     </div>
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>Ngày</th>
-                            <th>Website</th>
-                            <th>Giá trị đơn hàng</th>
-                            <th>Hoàn tiền</th>
-                            <th>Trạng thái</th>
+                            <th>{{ trans('message.detail_cashback_date') }}</th>
+                            <th>{{ trans('message.detail_cashback_retailer_name') }}</th>
+                            <th>{{ trans('message.detail_cashback_order_price') }}</th>
+                            <th>{{ trans('message.detail_cashback_amount') }}</th>
+                            <th>{{ trans('message.detail_cashback_status') }}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -99,7 +99,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center">Chưa có giao dịch nào được ghi nhận</td>
+                                <td colspan="5" class="text-center">{{ trans('message.detail_cashback_norecord') }}</td>
                             </tr>
                         @endforelse
                         </tbody>
