@@ -9,20 +9,16 @@
             <div class="col-md-8 wow fadeInLeft">
                 <div id="home-slide" class="carousel home-slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#home-slide" data-slide-to="0" class=""></li>
-                        <li data-target="#home-slide" data-slide-to="1" class="active"></li>
-                        <li data-target="#home-slide" data-slide-to="2" class=""></li>
+                        @foreach($carousels as $key => $carousel)
+                            <li data-target="#home-slide" data-slide-to="{{$key}}" class=""></li>
+                        @endforeach
                     </ol>
                     <div class="carousel-inner">
-                        <div class="item">
-                            <a href="#"><img src="/lib/Bootflat/img/slider1.jpg"></a>
+                        @foreach($carousels as $key => $carousel)
+                            <div class="item @if($key==0) active @endif">
+                                <a href="{{ $carousel->link }}"><img src="{{ url('images/'. $carousel->image) }}"></a>
                         </div>
-                        <div class="item active">
-                            <a href="#"> <img src="/lib/Bootflat/img/slider2.jpg"></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img src="/lib/Bootflat/img/slider3.jpg"></a>
-                        </div>
+                        @endforeach
                     </div>
                     {{--<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">--}}
                     {{--<span class="glyphicon glyphicon-chevron-left"></span>--}}
@@ -58,12 +54,15 @@
                         <i class="fa fa-sign-in fa-2x"></i> <span>{{ trans('message.homepage_steps_1') }}</span>
                     </p>
                     <p>
-                        <i class="fa fa-shopping-cart fa-2x"></i> <span>{{ trans('message.homepage_step_2') }}</span>
+                        <i class="fa fa-shopping-cart fa-2x"></i> <span>{{ trans('message.homepage_steps_2') }}</span>
                     </p>
                     <p>
-                        <i class="fa fa-money fa-2x"></i> <span>{{ trans('message.homepage_step_3') }}</span>
+                        <i class="fa fa-money fa-2x"></i> <span>{{ trans('message.homepage_steps_3') }}</span>
                     </p>
-                    <a href="{{ url('user/register') }}" class="btn btn-warning btn-lg btn-block">{{trans('message.cta_button_register')}}</a>
+                    <a href="{{ url('user/register') }}" class="btn btn-warning btn-lg btn-block">
+                        {{trans('message.cta_button_register')}}
+                        <div class="small">{{ trans('message.homepage_reward') }}</div>
+                    </a>
                 @endif
             </div>
         </div>

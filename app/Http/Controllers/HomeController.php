@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\Banner;
 use App\Models\Retailer;
 
 class HomeController extends Controller
@@ -14,6 +15,14 @@ class HomeController extends Controller
             ->take(8)
             ->get();
 
-        return view('home', compact('retailers'));
+        $carousels = Banner::where('status', 'active')
+            ->where('valid_from', '<', 'NOW()')
+            ->where(function ($query) {
+                $query->where('expired_at', '0000-00-00 00:00:00')
+                    ->orWhere('expired_at', '>', 'NOW()');
+            })
+            ->get();
+
+        return view('home', compact('retailers', 'carousels'));
     }
 }

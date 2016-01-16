@@ -69,12 +69,13 @@ return array (
   'page_title' => 'HoànTiền.VN - Hoàn tiền tiêu dùng mua hàng trực tuyến!',
   'hello' => 'Xin chào',
   'homepage_steps_headline' => 'Kiếm tiền với HoànTiền.VN',
-  'homepage_steps_1' => 'Đăng nhập HoanTien.VN',
-  'homepage_step_2' => 'Mua hàng trên website yêu thích',
-  'homepage_step_3' => 'Nhận hoàn tiền từ chúng tôi!',
-  'cta_button_register' => 'Bắt đầu ngay',
+    'homepage_steps_1' => '1. Đăng nhập HoanTien.VN',
+    'homepage_steps_2' => '2. Mua hàng trên website yêu thích',
+    'homepage_steps_3' => '3. Nhận hoàn tiền từ chúng tôi!',
+    'cta_button_register' => 'Bắt đầu ngay!',
   'homepage_merchants' => 'Website bán hàng đề cử',
   'cashback' => 'Hoàn tiền',
   'cashback_upto' => 'đến',
   'homepage_viewall' => 'Xem tất cả...',
+    'homepage_reward' => 'Tặng 50.000đ vào tài khoản'
 );

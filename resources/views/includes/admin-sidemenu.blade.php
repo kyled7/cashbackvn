@@ -33,6 +33,11 @@
                     <i class="fa fa-user"></i> <span>Users</span>
                 </a>
             </li>
+            <li @if(Request::is('admin/banners*')) class="active" @endif>
+                <a href="{{ url('admin/banners') }}">
+                    <i class="fa fa-page"></i> <span>Banners</span>
+                </a>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

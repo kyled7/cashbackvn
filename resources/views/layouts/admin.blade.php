@@ -21,7 +21,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     {!! Html::script('js/admin.js') !!}
 </head>
-<body class="hold-transition skin-green sidebar-mini sidebar-collapse">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
     <!-- Header -->
