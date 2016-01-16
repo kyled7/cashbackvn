@@ -64,9 +64,9 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('S3_KEY'),
-            'secret' => env('S3_SECRET'),
-            'region' => env('S3_REGION'),
+            'key' => 'AKIAICZXKBNB227ZKJLA',
+            'secret' => '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',
+            'region' => 'ap-southeast-1',
             'bucket' => env('S3_BUCKET'),
         ],
 

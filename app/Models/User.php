@@ -10,6 +10,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -141,6 +142,11 @@ class User extends Model implements AuthenticatableContract,
                 $user->account_balance->fill(['amount' => $user->initAccountBalanceReward])->save();
                 DB::commit();
             }
+
+            Mail::queue('email.welcome', compact('user'), function($message) use ($user) {
+                $message->from('info@hoantien.vn', 'HoànTiền.VN');
+                $message->to($user->email, $user->name)->subject(trans('message.welcome-email-title'));
+            });
         });
     }
 }

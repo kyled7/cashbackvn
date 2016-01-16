@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown mega-dropdown">
                     <button class="btn btn-warning navbar-btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Danh mục
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> {{ trans('message.navbar_category') }}
                     </button>
 
                     <ul class="dropdown-menu mega-dropdown-menu row">
