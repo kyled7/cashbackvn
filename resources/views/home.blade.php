@@ -7,7 +7,7 @@
         <div class="row">
             {{--Home slide--}}
             <div class="col-md-8 wow fadeInLeft">
-                <div id="home-slide" class="carousel home-slide" data-ride="carousel">
+                <div id="home-slide" class="carousel slide home-slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         @foreach($carousels as $key => $carousel)
                             <li data-target="#home-slide" data-slide-to="{{$key}}" class=""></li>
@@ -20,12 +20,12 @@
                         </div>
                         @endforeach
                     </div>
-                    {{--<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">--}}
-                    {{--<span class="glyphicon glyphicon-chevron-left"></span>--}}
-                    {{--</a>--}}
-                    {{--<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">--}}
-                    {{--<span class="glyphicon glyphicon-chevron-right"></span>--}}
-                    {{--</a>--}}
+                    <a class="left carousel-control" href="#home-slide" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#home-slide" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
             </div>
             {{--End home slide--}}
