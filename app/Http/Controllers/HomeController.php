@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $retailers = Retailer::where('status', 'active')
-            ->orderBy('created_at', 'desc')
+            ->orderBy('clicks', 'desc')
             ->take(8)
             ->get();
 

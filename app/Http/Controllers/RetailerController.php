@@ -37,6 +37,10 @@ class RetailerController extends Controller
     {
         $retailer = Retailer::findBySlugOrFail($slug);
 
+        $retailer->fill([
+            'clicks' => $retailer->clicks
+        ])->save();
+
         return view('retailer.redirect', compact('retailer'));
     }
 }
