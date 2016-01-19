@@ -4,6 +4,8 @@
 <meta property="fb:admins" content="100001031124563" />
 <meta property="fb:app_id" content="1512050339095136" />
 <meta name="description" content="Website hoàn tiền tiêu dùng trực tuyến - Mua online, nhận lại tiền!">
+<meta property="og:description" content="Website hoàn tiền tiêu dùng trực tuyến - Mua online, nhận lại tiền!">
+<meta property="og:title" content="@yield('title')">
 <title>@yield('title')</title>
 
 {!! Html::style('css/app.css') !!}

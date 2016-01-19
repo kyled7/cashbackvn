@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title', trans('message.page_title'))
+
 @section('content')
     {!!  Html::script('js/jquery.jscroll.min.js')  !!}
     <div class="container">

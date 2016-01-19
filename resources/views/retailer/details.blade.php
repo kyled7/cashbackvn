@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', $retailer->name)
+@section('title', $retailer->name . ' - mua hàng trực tuyến và nhận hoàn tiền tại HoànTiền.VN')
 
 @section('content')
     <div class="container retailer-details">
